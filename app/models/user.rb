@@ -1,5 +1,6 @@
 class User < ApplicationRecord
     validates :username, :password_digest, :session_token, presence: true
+    validates :username, uniqueness: true
     validates :password, length: {minimum: 6}, allow_nil: true
 
 
@@ -8,6 +9,7 @@ class User < ApplicationRecord
 
 
     def password=(password)
+        # debugger
         @password = password
         self.password_digest = BCrypt::Password.create(password)
     end
@@ -24,7 +26,8 @@ class User < ApplicationRecord
     end
 
     def self.find_by_credentials(username, password)
-        user = User.find_by(username: user)
+        user = User.find_by(username: username)
+        # debugger
         user && user.is_password?(password) ? user : nil 
     end
 

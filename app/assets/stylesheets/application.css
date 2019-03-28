@@ -13,3 +13,85 @@
  *= require_tree .
  *= require_self
  */
+
+
+
+/* .login-page{
+
+    /* display: flex; */
+    /* text-align: center; */
+    /* background-color: aqua; */
+ /* }  */
+
+
+.login-nav-bar{
+    
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+
+
+
+/* 
+.login-form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #71767a;
+    border: 1px solid #eeeff2;
+    background-color: white;   
+    margin-top: 100px;
+    border-radius: 3px;
+    width: 40%;
+} */
+
+
+.login-signup a{ 
+    background-color: #34bf49;
+    color: white;
+    margin-right: 8px;
+    padding: 0 20px;
+    display: inline-block;
+    padding-top: 17px;
+    padding-bottom: 17px;
+}
+
+
+.login-Pixel800{
+    color: #525558;
+    font-size: 24px;
+} 
+
+
+.login-form{
+    font-size: 14px;
+}
+
+
+
+
+
+
+/* * {
+    box-sizing: border-box;
+} */
+
+body {
+    /* font-family: "Roboto", sans-serif; */
+    font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
+
+    background-color: #eeeff2;
+    margin: 0;
+}
+
+
+a {
+    text-decoration: none;
+    color: #71767a;
+} 
