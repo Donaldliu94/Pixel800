@@ -22,14 +22,22 @@ class SessionForm extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user).then(() => this.props.history.push("/"));
+        this.props.processForm(user).then(() => this.props.history.push("/greetings"));
     }
 
-    
+    test(){
+
+    }
 
     render() {
+
+
+        let topRightBtn = <div className="signup-btn"> {this.props.navLink} </div>;
+        if (this.props.formType === "Sign up"){
+            topRightBtn = <div className="login-btn"> {this.props.navLink} </div>;
+        }  
         return(
-            <div className= "login-page">
+            <div className="login-page">
                 <nav className ="login-nav-bar">
                     <div className="login-nav-bar-left">
                         <div className="nav-logo">
@@ -47,42 +55,40 @@ class SessionForm extends React.Component {
                     </div>
 
                     <div className="login-nav-bar-right">
-                        <div className="login-signup">
-                            {this.props.navLink}
-                        </div>
+                        {topRightBtn}
                     </div>
 
                 </nav>
+            <div className="login-flex">
                 
                 <div className = "login-form-container">
                     <div className = "login-Pixel800">
                         {this.props.formType + " to Pixel800"}
                     </div> 
                     <form onSubmit ={this.handleSubmit} className="login-form-box">
-                        <br/>
-                        <br/>
                         {/* {this.renderErrors()} */}
                         <div className="login-form">
-                            <br/>
                             <label>Email or Username: 
                                 <br/>
                                 <input type="text" value={this.state.username} onChange={this.update("username")} className="login-input"/>
                             </label>
-                            <br/>
+
                             <label>Password: 
                                 <br/>
                                 <input type="password" value={this.state.password} onChange={this.update("password")} className="login-input"/>
                             </label>
-                            <br/>
+
                             <input type="submit" value={this.props.formType} className="session-submit"/>
                         </div>
-
                     </form>
+                    <div style={{ height:'170px' }}>
+                    </div>
                     <div className="no-account">
                         Don't have an account? &nbsp; {this.props.navLink}
                     </div>
                 </div>
             </div>
+        </div>
         )
     }
 }

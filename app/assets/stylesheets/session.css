@@ -1,20 +1,15 @@
 .login-form-container {
-    border: 1px solid #ccc;
-    /* border: 1px solid #eeeff2; */
+    /* border: 1px solid #ccc; */
+    border: 1px solid #eeeff2;
     border-radius: 5px;
     padding: 30px;
-    width: 50%;
-    max-width: 400px;
-    height: 80%;
-    max-height: 530px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 400px;
+    /* max-height: 530px; */
+    height: 530px;
+
     background-color: #fff;
     color: #71767a;
     box-sizing: border-box;
-    font-weight: 200;
 }
 
 
@@ -35,15 +30,20 @@
 input{
     width: 100%;
     margin: 6px 0px 17px 0px;
-    display: inline-block;
     border: 1px solid rgba(185,193,199,0.5);
     border-radius: 3px;
     font-size: 15px;
     line-height: 1.4em;
     font-weight: 300;
+    padding: 8px 10px;
+    box-sizing: border-box;
 }
 
+label{
+    font-size: 14px;
+    color: #71767a;
 
+}
 /* .form-links {
     margin-top: 2.5em;
     display: flex;
@@ -57,13 +57,12 @@ input{
     background-color: #34bf49;
     /* border: 2px solid #34bf49; */
     color: white;
-    max-width: 120;
     /* padding: 14px 8px; */
-    margin: 8px 0;
+    margin: 0;
     border-radius: 4px;
     cursor: pointer;
     font-weight: normal;
-    font-size: 18px !important;
+    font-size: 18px;
     line-height: 1.4em;
 }
 
@@ -125,3 +124,16 @@ input{
 .nav-studio-logo:hover{
     color: #0099e5;
 }
+
+
+
+.login-page{
+    min-width:710px;
+}
+.login-flex{
+    height: calc(100vh - 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(247, 248, 250);
+ } 
