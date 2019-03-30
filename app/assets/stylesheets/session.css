@@ -81,6 +81,9 @@ label{
     color: #0099e5;
 }
 
+ .demo-link {
+    color:  #0099e5;
+ }
 
 
 
@@ -137,3 +140,5 @@ label{
     align-items: center;
     background-color: rgb(247, 248, 250);
  } 
+
+
