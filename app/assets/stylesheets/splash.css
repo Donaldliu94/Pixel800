@@ -43,6 +43,10 @@
 }
 
 
+.login-nav-bar-left{
+    padding-left: 40px
+}
+
 
 .description-top{
     font-size: 40px;
@@ -98,4 +102,37 @@
 
 .nav-logo:hover a{
     color: #B3B7B8;
+}
+
+
+
+
+
+.middle-empty-space{
+    padding: 40px;
+}
+
+
+.hero-bottom-half{
+    height: 80vh;
+    justify-content: center;
+    width:100%;
+    position: absolute;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.mid-splash-description-top{
+    font-size: 36px;
+    font-weight: normal;
+    color: #525558;
+    margin: 32px 0px 20px 0px;
+}
+
+
+.mid-splash-description-bottom{
+    font-size: 18px;
+    color: #525558;
+    margin: 0 auto 40px auto;
 }

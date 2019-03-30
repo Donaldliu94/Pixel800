@@ -1,0 +1,38 @@
+.user-nav-bar{
+    /* display: flex;
+    justify-content: space-between;
+    align-content: center;
+    height: 50px; */
+    display: flex;
+    height: 50px;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    transition-duration: 0.3s;
+
+
+
+}
+
+
+.user-nav-bar-left {
+    display: flex;    
+}
+
+.user-nav-logo {
+    padding: 8px;
+}
+
+.user-nav-discover {
+    padding: 8px;
+}
+
+
+.user-nav-bar-right{
+    background-color: #34bf49;
+    color: white;
+    padding: 0 20px;
+    display: inline-block;
+    padding-top: 17px;
+    padding-bottom: 17px;
+}
