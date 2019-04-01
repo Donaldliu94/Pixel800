@@ -145,7 +145,7 @@ class Greeting extends React.Component {
                             <img srcSet="https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500 1x, https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500 2x" className="photo-item__img" alt="Close Up Photography of Cherry Blossom Tree" data-image-width="6000" data-image-height="4000" data-big-src="https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260" data-large-src="https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" data-tiny-src="https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" data-tiny-srcset="https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500 1x, https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500 2x" data-pin-media="https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=1200&amp;w=800" src="https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"></img>
                         </div>
 
-                        <input type="file" onChange={this.handleFile.bind(this)}/>
+                        {/* <input type="file" onChange={this.handleFile.bind(this)}/> */}
                     </div>
 
                 </div>
