@@ -99,7 +99,14 @@ label{
     margin-right: 8px;
     color: black;
 }
-
+.nav-logo a svg{
+    stroke:white;
+    fill: white;
+}
+.nav-logo a svg:hover{
+    stroke:#0099e5;
+    fill: #0099e5;
+}
 .nav-logo:hover a{
     color: #0099e5;
 }
@@ -140,5 +147,32 @@ label{
     align-items: center;
     background-color: rgb(247, 248, 250);
  } 
+
+
+
+.login-form.error label{
+  color:red;
+}
+
+.login-form.error label input{
+  border:red 1px solid;
+}
+
+.error-messages{
+    display:none;
+    left:50%;
+    transform: translate(-50%, 0);
+    position:fixed;
+    color:white;
+    width:400px;
+    padding:10px 20px;
+    background-color:red;
+}
+.error-messages>p{
+    margin:0;
+}
+.error-messages.error{
+    display: block;
+}
 
 

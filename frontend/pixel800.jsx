@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     // window.login = login;
     // window.logout = logout;
     // window.signup = signup;
+    window.store = store;
 
 
     // TESTING!!!!!!!!

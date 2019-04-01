@@ -8,7 +8,7 @@ class SessionForm extends React.Component {
 
     constructor(props){
         super(props);
-        this.state = {username: "", password: ""};
+        this.state = {username: "", password: "", isValid: true};
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
         this.handleDemo = this.handleDemo.bind(this);
@@ -16,11 +16,17 @@ class SessionForm extends React.Component {
 
 
     update(field) {
+        
         return(
             e => this.setState({[field]: e.currentTarget.value})
         );
     }
 
+    resetValidState(){
+        return (
+            e => this.setState({ isValid: true })
+        );
+    }
 
     componentWillUnmount(){
         this.props.clearErrors();
@@ -29,7 +35,8 @@ class SessionForm extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user).then(() => this.props.history.push("/greetings"));
+        this.props.processForm(user).then(() => this.props.history.push("/greetings"), error => this.setState({ isValid: false }));
+        
     }
 
 
@@ -41,17 +48,14 @@ class SessionForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul>
-                {this.props.errors.map((error, i) => (
-                    <li key={i}>{error}</li>
-                ))}
-            </ul>
+            <div className={this.state.isValid ? "error-messages" : "error-messages error"}>
+                    {this.props.errors.map((error, i) => (
+                        <p key={i}>{error}</p>
+                    ))}
+            </div>
         )
     }
 
-    test(){
-
-    }
 
     render() {
 
@@ -62,6 +66,7 @@ class SessionForm extends React.Component {
         }  
         return(
             <div className="login-page">
+                {this.renderErrors()}
                 <nav className ="login-nav-bar">
                     <div className="login-nav-bar-left">
                         <div className="nav-logo">
@@ -90,21 +95,20 @@ class SessionForm extends React.Component {
                         {this.props.formType + " to Pixel800"}
                     </div> 
                     <form onSubmit ={this.handleSubmit} className="login-form-box">
-                        {/* {this.renderErrors()} */}
-                        <div className="login-form">
+                        <div className={ this.state.isValid ? "login-form" : "login-form error"}>
                             <label>Username: 
                                 <br/>
-                                <input type="text" value={this.state.username} onChange={this.update("username")} className="login-input"/>
+                                <input type="text" value={this.state.username} onChange={this.update("username")} onClick={this.resetValidState()} className="login-input"/>
                             </label>
 
                             <label>Password: 
                                 <br/>
-                                <input type="password" value={this.state.password} onChange={this.update("password")} className="login-input"/>
+                                    <input type="password" value={this.state.password} onChange={this.update("password")} onClick={this.resetValidState()} className="login-input"/>
                             </label>
 
                             <input type="submit" value={this.props.formType} className="session-submit"/>
-                                {this.renderErrors()}
-
+                                
+                               
                         </div>
                     </form>
                     <div style={{ height:'170px' }}>

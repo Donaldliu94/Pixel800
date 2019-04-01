@@ -8,6 +8,21 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
 
 
+    has_many :followers,
+    class_name: :Follows,
+    foreign_key: :follower_id
+
+    has_many :followed,
+    class_name: :Follows,
+    foreign_key: :follower_id
+
+
+    has_many :posts,
+    class_name: :Post,
+    foreign_key: :photographer_id
+
+
+
     def password=(password)
         # debugger
         @password = password
