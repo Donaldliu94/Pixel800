@@ -13,7 +13,7 @@ class Greeting extends React.Component {
             title: "",
             description: "",
             photoFile: null,
-            uploadForm: false
+            // uploadForm: false
         }
         // this.handleInput = this.handleInput.bind(this)
         // this.handleFile = this.handleFile.bind(this)
@@ -125,22 +125,31 @@ class Greeting extends React.Component {
                             <FontAwesomeIcon icon={['fas', 'bell']}/>
                         </div>
 
-                        <div className="icon-plus-sign">
-                            {/* <Link to="/home/posts/create" onClick={() => this.props.createPost()}><FontAwesomeIcon icon={['fas', 'cloud-upload-alt']} /></Link> */}
+                        {/* <div className="icon-plus-sign">
                             <span onClick={() => this.setState({ uploadForm: true})}><FontAwesomeIcon icon={['fas', 'plus']} /></span>
                             <div className={this.state.uploadForm ? "" : "upload-form-container-none" }>
                                 <div className="modal" onClick={() => this.setState({uploadForm: false})} >
                                 </div>
                                 <PostFormContainer/>
                             </div>
+                        </div> */}
+
+                        <div className="icon-plus-sign">
+                            <span onClick={() => this.props.openModal()}><FontAwesomeIcon icon={['fas', 'plus']} /></span>
+                            <div className={this.props.modalState ? "" : "upload-form-container-none"}>
+                                <div className="modal" onClick={() => this.props.closeModal()} >
+                                </div>
+                                <PostFormContainer />
+                            </div>
                         </div>
+
                     </div>
                 </nav>
 
                 <hgroup className="header-group">
                         <div className="editors-choice">
                         <h2>This week in Editors' Choice:</h2>
-                        Gallery by Pixel800
+                        Gallery by Pixel800: {this.props.currentUser.username}
                         </div>
                 </hgroup>
 

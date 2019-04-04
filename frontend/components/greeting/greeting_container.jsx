@@ -2,15 +2,14 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import Greeting from './greeting';
 import {createPost} from '../../actions/post_actions'
-import { upload_state } from '../../actions/upload_action';
-
+import { openModal, closeModal } from '../../actions/modal_action'
 
 
 const mapStateToProps = (state) => {
-    // debugger
+    debugger
     return {
         currentUser: state.entities.users[state.session.id],
-        upload_state: state.ui.upload
+        modalState: state.ui.modal
     };
 };
 
@@ -18,7 +17,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return({
         logout: () => dispatch(logout()),
-        createPost: (post) =>dispatch(createPost(post))
+        createPost: (post) =>dispatch(createPost(post)),
+        openModal: () => dispatch(openModal()),
+        closeModal: () => dispatch(closeModal())
     });
 };
 

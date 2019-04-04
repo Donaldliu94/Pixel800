@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import uploadReducer from './upload_reducer'
+import modalReducer from './modal_reducer'
 
 
 const uiReducer = combineReducers({
-    upload: uploadReducer
+    modal: modalReducer
 });
 
 

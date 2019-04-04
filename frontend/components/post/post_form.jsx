@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 class PostForm extends React.Component {
 
@@ -43,12 +45,21 @@ class PostForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const formData = new FormData();
+        let formData = new FormData();
         formData.append('post[title]', this.state.title);
         formData.append('post[description]', this.state.description);
         formData.append('post[photographer_id]', this.props.currentUser.id);
         formData.append('post[photo]', this.state.photoFile);
         this.props.createPost(formData);
+        this.props.closeModal();
+        this.setState({
+            title: "",
+            description: "",
+            photoFile: null,
+            photoUrl: "",
+            uploaded: false,
+
+        })
     }
 
 
@@ -66,7 +77,11 @@ class PostForm extends React.Component {
                         <img className="preview-photo" src={this.state.photoUrl}></img>
                     </div>
                     <div className="uploading-picture-form1-left-upload">
-                        <h1>UPLOAD</h1>
+                        <label htmlFor="files" className="fake-upload-form-btn-2">
+                            <FontAwesomeIcon icon={['fas', 'plus']} /> 
+                            <div>Add more photos</div>  
+                            <input type="file" className="upload-form-btn" onChange={this.handleFile} id="files" />
+                            </label>
                     </div>
                 </div>
 
@@ -87,9 +102,10 @@ class PostForm extends React.Component {
             <div className="uploading-picture-form2">
                 <div>
                 <form onSubmit={ () => this.handleSubmit}>
-                    <label htmlFor="files" className="fake-upload-form-btn">Select Photos
+                    <label htmlFor="files" className="fake-upload-form-btn-1">Select Photos
                         <input type="file" className="upload-form-btn" onChange={this.handleFile} id="files"/>
                     </label>
+                    do not drag and drop, it doesn't work
                 </form>
                 </div>
             </div>

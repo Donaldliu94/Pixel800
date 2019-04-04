@@ -17,9 +17,9 @@ class PostIndex extends React.Component {
         this.props.photos.forEach( (photo, idx) =>{
             // debugger
             if (idx % 2 === 0){
-                leftArray.push(<PostIndexItem photo={photo} key={idx} />)
+                leftArray.unshift(<PostIndexItem photo={photo} key={idx} />)
             } else{
-                rightArray.push(<PostIndexItem photo={photo} key={idx} />)
+                rightArray.unshift(<PostIndexItem photo={photo} key={idx} />)
             }
 
         })

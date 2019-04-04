@@ -119,4 +119,5 @@ a {
     background-color: gray;
     opacity: .5;
     overflow: hidden;
+    position: fixed;
 }

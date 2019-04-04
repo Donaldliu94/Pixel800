@@ -15,16 +15,32 @@
     display: flex;
 }
 
+.uploading-picture-form1-left-preview{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
 .preview-photo{
     width: 250px;
     height: auto;
 }
 
 .uploading-picture-form1-left-upload{
-    margin-left: 10px;
-
+    margin-left: 15px;
+    margin-top: 20px;
+    border: 2px solid #B9C1C7;
+    font-weight: bold;
+    text-align: center;
+    width: 245px;
+    height: 245px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.fake-upload-form-btn-2{
+    padding: 106px 64px;
+}
 
 
 .uploading-picture-form1-right {
@@ -37,7 +53,8 @@
 }
 
 .uploading-picture-form1-right button{
-    background-color: green;
+    background-color: #41CB56;
+    border: 1px solid #41CB56;
     color: white;
     padding: 10px;
     font-size: 16px;
@@ -62,7 +79,7 @@
     padding: 5px;
 }
 
-.fake-upload-form-btn {
+.fake-upload-form-btn-1 {
     font-size: 16px;
     border: solid 1px;
     color: white;
@@ -76,7 +93,7 @@
     border: solid 1px #0099E5;
 }
 
-.fake-upload-form-btn:hover {
+.fake-upload-form-btn-1:hover {
     background-color: #2FAAFA;
     border: solid 1px #2FAAFA;
 }
@@ -113,7 +130,8 @@
     left: 100px;
     z-index: 2;
     background-color: white;
-    overflow: hidden;
+    border-radius: 3px;
+    position: fixed;
 }
 .uploading-picture-form2 {
     position: absolute;
@@ -123,8 +141,14 @@
     left: 100px;
     z-index: 2;
     background-color: white;
+    border-radius: 3px;
+    position: fixed;
 }
 
+body.modal-open {
+   overflow: hidden;
+   position: fixed;
+}
 
 
 /* PostIndexItem */
