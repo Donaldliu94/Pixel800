@@ -10,6 +10,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
+import PostFormContainer from './post/post_form_container.jsx';
+import PostIndex from './post/post_index_container'
 
 library.add(fab, fas, far)
 
@@ -20,9 +22,11 @@ const App = () => {
     return (
         <div>
             <AuthRoute exact path="/" component={SplashContainer} />
-            <ProtectedRoute exact path="/greetings" component={GreetingContainer} />
+            <ProtectedRoute path="/home" component={GreetingContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
+            <ProtectedRoute exact path="/home/posts/create" component={PostFormContainer} />
+            <ProtectedRoute path="/home" component={PostIndex} />
         </div>
     )
 }

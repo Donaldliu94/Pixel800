@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import userReducer from './user_reducer'
+import postReducer from './post_reducer'
 
 
 
@@ -7,7 +8,8 @@ import userReducer from './user_reducer'
 
 
 const entitiesReducer = combineReducers({
-    users: userReducer
+    users: userReducer,
+    posts: postReducer
 });
 
 

@@ -1,12 +1,58 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PostFormContainer from '../post/post_form_container';
+
+
 
 class Greeting extends React.Component {
+
+    constructor(props){
+        super(props)
+        this.state = {
+            title: "",
+            description: "",
+            photoFile: null,
+            uploadForm: false
+        }
+        // this.handleInput = this.handleInput.bind(this)
+        // this.handleFile = this.handleFile.bind(this)
+        // this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
+    // handleInput(field) {
+    //     return (e) => {
+    //     this.setState({ [field]: e.currentTarget.value })
+    //     }
+    // }
+
+    // handleFile(e) {
+    //     const file = e.currentTarget.files[0];
+    //     const fileReader = new FileReader();
+    //     fileReader.onloadend = () => {
+    //         this.setState({photoFile: file, photoUrl: fileReader.result});
+    //     };
+    //     if (file) {
+    //         fileReader.readAsDataURL(file);
+    //     }
+    // }
+
+    // handleSubmit(e) {
+    //     e.preventDefault();
+    //     const formData = new FormData();
+    //     formData.append('post[title]', this.state.title)
+    //     formData.append('post[description]', this.state.description)
+    //     formData.append('post[photographer_id]', this.props.currentUser.id)
+    //     formData.append('post[photo]', this.state.photoFile)
+    //     this.props.createPost(formData)
+    // }
+
 
 
     render() {
             return <div>
+
+
                 <nav className="user-nav-bar">
                     <div className="user-nav-bar-left">
                         
@@ -79,8 +125,14 @@ class Greeting extends React.Component {
                             <FontAwesomeIcon icon={['fas', 'bell']}/>
                         </div>
 
-                        <div className="icon-cloud-upload">
-                            <FontAwesomeIcon icon={['fas', 'cloud-upload-alt']}  />
+                        <div className="icon-plus-sign">
+                            {/* <Link to="/home/posts/create" onClick={() => this.props.createPost()}><FontAwesomeIcon icon={['fas', 'cloud-upload-alt']} /></Link> */}
+                            <span onClick={() => this.setState({ uploadForm: true})}><FontAwesomeIcon icon={['fas', 'plus']} /></span>
+                            <div className={this.state.uploadForm ? "" : "upload-form-container-none" }>
+                                <div className="modal" onClick={() => this.setState({uploadForm: false})} >
+                                </div>
+                                <PostFormContainer/>
+                            </div>
                         </div>
                     </div>
                 </nav>
@@ -90,66 +142,10 @@ class Greeting extends React.Component {
                         <h2>This week in Editors' Choice:</h2>
                         Gallery by Pixel800
                         </div>
-                    {/* <button className="header-button" onClick={logout}>Logout</button> */}
                 </hgroup>
 
 
-                <div className="user-body">
-
-                    <div className="randombox">
-
-                    </div>
-
-                    <div className="user-body-left">
-                        <div className="girl2">
-                            <img alt="peace" className="girlpeace" src="https://drscdn.500px.org/photo/297055921/q%3D80_h%3D450/v2?user_id=71974091&amp;webp=true&amp;sig=758803e4ef4d7f2cf8b7fa500b5f4df836a8d2829f0c0cfbee4a090a4d528d7c"></img>
-                        </div>
-
-                        <div className="girl2-1">
-                            <img alt="walk-away" className="girlpeace-walk-away" src="https://drscdn.500px.org/photo/297038873/q%3D80_h%3D450/v2?user_id=71974091&amp;webp=true&amp;sig=2fe38abc17cdd60b48cb848836d2f657dfa502952863ba0f0dfb2971cef9ca03"></img>
-                        </div>
-
-                        <div className="butterflies">
-                            <img srcSet="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500 1x, https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500 2x" className="photo-item__img" alt="Close Up of Leaf" data-image-width="3840" data-image-height="2160" data-big-src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260" data-large-src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" data-tiny-src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" data-tiny-srcset="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500 1x, https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500 2x" data-pin-media="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=1200&amp;w=800" src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"></img>
-                        </div>
-                    
-                        <div className="baby-picking-leaves">
-                            <img srcSet="https://images.pexels.com/photos/590471/pexels-photo-590471.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500 1x, https://images.pexels.com/photos/590471/pexels-photo-590471.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500 2x" className="photo-item__img" alt="Boy in Gray Knit Hat" data-image-width="2048" data-image-height="2476" data-big-src="https://images.pexels.com/photos/590471/pexels-photo-590471.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260" data-large-src="https://images.pexels.com/photos/590471/pexels-photo-590471.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" data-tiny-src="https://images.pexels.com/photos/590471/pexels-photo-590471.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" data-tiny-srcset="https://images.pexels.com/photos/590471/pexels-photo-590471.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500 1x, https://images.pexels.com/photos/590471/pexels-photo-590471.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500 2x" data-pin-media="https://images.pexels.com/photos/590471/pexels-photo-590471.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=1200&amp;w=800" src="https://images.pexels.com/photos/590471/pexels-photo-590471.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"></img>
-                        </div>
-                    </div>
-
-                    <div className="user-body-right">
-                        <div className="girl1">
-                            <img alt="Lisa" className="Elements__HomefeedPhotoImage-eNfnom-dBEpbj" src="https://drscdn.500px.org/photo/298865833/q%3D80_m%3D1000/v2?user_id=71974091&amp;webp=true&amp;sig=0f710268e7083bb67fa94fbc42a69b52ff4ba1b2f7c23264907931750727fb6d"></img>
-                        </div>
-                            
-                       <div className="user-body-right-icons">               
-                            <div className="icon-heart">
-                                <FontAwesomeIcon icon={['far', 'heart']} />
-                            </div>
-
-                            <div className="icon-comment">
-                                <FontAwesomeIcon icon={['far', 'comment']} />
-                            </div>
-
-                            <div className="icon-plus-square">
-                                <FontAwesomeIcon icon={['far', 'plus-square']} />
-                            </div>
-                        </div>
-                        
-                        <div className="korea-hill">
-                            <img srcSet="https://images.pexels.com/photos/290604/pexels-photo-290604.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500 1x, https://images.pexels.com/photos/290604/pexels-photo-290604.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500 2x" className="photo-item__img" alt="Cherry Blossoms Tree Near Body of Water" data-image-width="4368" data-image-height="2912" data-big-src="https://images.pexels.com/photos/290604/pexels-photo-290604.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260" data-large-src="https://images.pexels.com/photos/290604/pexels-photo-290604.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" data-tiny-src="https://images.pexels.com/photos/290604/pexels-photo-290604.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" data-tiny-srcset="https://images.pexels.com/photos/290604/pexels-photo-290604.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500 1x, https://images.pexels.com/photos/290604/pexels-photo-290604.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500 2x" data-pin-media="https://images.pexels.com/photos/290604/pexels-photo-290604.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=1200&amp;w=800" src="https://images.pexels.com/photos/290604/pexels-photo-290604.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"></img>
-                        </div> 
-
-                        <div className="japan-cherry-blosson">
-                            <img srcSet="https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500 1x, https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500 2x" className="photo-item__img" alt="Close Up Photography of Cherry Blossom Tree" data-image-width="6000" data-image-height="4000" data-big-src="https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260" data-large-src="https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" data-tiny-src="https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" data-tiny-srcset="https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500 1x, https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500 2x" data-pin-media="https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=1200&amp;w=800" src="https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"></img>
-                        </div>
-
-                        {/* <input type="file" onChange={this.handleFile.bind(this)}/> */}
-                    </div>
-
-                </div>
-
+                
             </div>
                 
     }

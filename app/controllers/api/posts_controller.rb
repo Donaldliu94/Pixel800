@@ -1,5 +1,5 @@
-class Api::PostPicturesController < ApplicationController
-
+class Api::PostsController < ApplicationController
+#Pictures
 
     def index
         @posts = Post.all
@@ -14,10 +14,13 @@ class Api::PostPicturesController < ApplicationController
 
 
     def create
+        # debugger
         @post = Post.new(post_params)
+
         if @post.save
-            render json: {message: "Sucessfully posted"}
+            render :show
         else
+            # debugger
             render json: @post.errors.full_messages, status: 401
         end
     end
@@ -26,7 +29,7 @@ class Api::PostPicturesController < ApplicationController
 
     def destroy
         @post = current_picture
-        if @post 
+        if @post
             @post.destroy
             render :show
         else
@@ -39,7 +42,7 @@ class Api::PostPicturesController < ApplicationController
 
 private
     def post_params
-        params.require(:post).permit(:title, :description, :photographer_id)
+        params.require(:post).permit(:title, :description, :photographer_id, :photo)
     end
 
     def current_picture

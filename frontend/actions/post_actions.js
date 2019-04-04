@@ -20,6 +20,7 @@ const receiveAllPosts = (posts) => {
 
 
 const receivePost = (post) => {
+    // debugger
     return({
         type: RECEIVE_POST,
         post: post
@@ -28,9 +29,10 @@ const receivePost = (post) => {
 
 
 
-const removePost = (post) => {
+const removePost = (id) => {
     return({
         type: REMOVE_POST,
+        postId: id
     });
 };
 
@@ -64,6 +66,7 @@ export const fetchPost = (id) => (dispatch) => {
 
 
 export const createPost = (post) => (dispatch) => {
+    // debugger
     return(
         APIUtil.createPost(post).then( (post) => dispatch(receivePost(post)))
     );

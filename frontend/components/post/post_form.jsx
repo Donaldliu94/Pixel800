@@ -1,0 +1,106 @@
+import React from 'react';
+
+class PostForm extends React.Component {
+
+    constructor(props) {
+        // debugger
+        super(props)
+        debugger
+        this.state = {
+            title: "",
+            description: "",
+            photoFile: null,
+            photoUrl: "",
+            uploaded: false,
+            
+        }
+        this.handleInput = this.handleInput.bind(this)
+        this.handleFile = this.handleFile.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
+
+
+    handleInput(field) {
+        return (e) => {
+            this.setState({ [field]: e.currentTarget.value })
+        }
+    }
+
+    handleFile(e) {
+        e.preventDefault();
+        const file = e.currentTarget.files[0];
+        const fileReader = new FileReader();
+        fileReader.onloadend = () => {
+            debugger
+            this.setState({ photoFile: file, photoUrl: fileReader.result, uploaded: true});     // you want to put uploaded:true here because if you put that code below, once you upload photo it would re-render and then jump to the render code below, and therefore you wouldn't hit this line, and don't have access to photoUrl.
+        };
+        if (file) {
+            debugger
+            fileReader.readAsDataURL(file);
+        }
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('post[title]', this.state.title);
+        formData.append('post[description]', this.state.description);
+        formData.append('post[photographer_id]', this.props.currentUser.id);
+        formData.append('post[photo]', this.state.photoFile);
+        this.props.createPost(formData);
+    }
+
+
+    // state.uploaded : false 
+    // 
+    render() {
+        // this.state.uploaded ? 
+        debugger
+        return this.state.uploaded ?  
+            <div className="uploading-picture-form1">
+
+                <div className="uploading-picture-form1-left">
+                    {/* STICK PREVIEW AND UPLOAD HERE */}
+                    <div className="uploading-picture-form1-left-preview">
+                        <img className="preview-photo" src={this.state.photoUrl}></img>
+                    </div>
+                    <div className="uploading-picture-form1-left-upload">
+                        <h1>UPLOAD</h1>
+                    </div>
+                </div>
+
+                    <form onSubmit={ () => this.handleSubmit()} >  
+                        <div className="uploading-picture-form1-right">
+                            <button onClick={this.handleSubmit}>Submit</button>
+
+                            <label htmlFor="title">Title</label>
+                            <input type="text" className="uploading-picture-title" id="title" value={this.state.title} onChange={this.handleInput("title")} />
+                            
+                            <label htmlFor="description">Description</label>
+                            <input type="text" className="uploading-picture-description" id="description" value={this.state.description} onChange={this.handleInput("description")} />
+                           
+                        </div>
+                    </form>
+            </div>
+            :
+            <div className="uploading-picture-form2">
+                <div>
+                <form onSubmit={ () => this.handleSubmit}>
+                    <label htmlFor="files" className="fake-upload-form-btn">Select Photos
+                        <input type="file" className="upload-form-btn" onChange={this.handleFile} id="files"/>
+                    </label>
+                </form>
+                </div>
+            </div>
+    }
+}
+
+
+export default PostForm;
+
+
+
+
+
+
