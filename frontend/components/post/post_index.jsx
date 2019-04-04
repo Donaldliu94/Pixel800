@@ -17,9 +17,9 @@ class PostIndex extends React.Component {
         this.props.photos.forEach( (photo, idx) =>{
             // debugger
             if (idx % 2 === 0){
-                leftArray.unshift(<PostIndexItem photo={photo} key={idx} />)
+                leftArray.unshift(<PostIndexItem photo={photo} key={idx} currentUser={this.props.currentUser}/>)
             } else{
-                rightArray.unshift(<PostIndexItem photo={photo} key={idx} />)
+                rightArray.unshift(<PostIndexItem photo={photo} key={idx} currentUser={this.props.currentUser}/>)
             }
 
         })

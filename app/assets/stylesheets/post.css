@@ -183,11 +183,23 @@ body.modal-open {
 
 
 
+.PostIndexItem-photo-attributes{
+    display: flex;
+    margin-bottom: 16px;
+}
+
 
 .PostIndexItem-photo-title{
     margin-right: 24px;
     display: flex;
     align-items: center;
+    margin-bottom: 4px;
+    font-size: 24px;
+    font: bold;
+}
+
+.PostIndexItem-photo-username{
+    margin-bottom: 20px;
 }
 
 /* 
@@ -202,7 +214,8 @@ body.modal-open {
 
 
 
-.PostIndexItem-photo-attributes{
-    display: flex;
-    margin-bottom: 20px;
-}
+
+
+
+
+/* temporary css for fun */

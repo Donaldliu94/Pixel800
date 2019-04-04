@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 
-const PostIndexItem = ({photo}) => (
+const PostIndexItem = ({photo, currentUser}) => (
 
     <>
     <div className="PostIndexItem-photo">
@@ -14,9 +14,6 @@ const PostIndexItem = ({photo}) => (
         </div>
 
         <div className="PostIndexItem-photo-attributes">
-            <div className="PostIndexItem-photo-title">
-                {photo.title}
-            </div>
             <div className="icon-heart">
                 <FontAwesomeIcon icon={['far', 'heart']} />
             </div>
@@ -28,6 +25,12 @@ const PostIndexItem = ({photo}) => (
             <div className="icon-plus-square">
                 <FontAwesomeIcon icon={['far', 'plus-square']} />
             </div>
+        </div>
+        <div className="PostIndexItem-photo-title">
+            {photo.title}
+        </div>
+        <div className="PostIndexItem-photo-username">
+            by {currentUser.username}
         </div>
     </div>    
     </>
