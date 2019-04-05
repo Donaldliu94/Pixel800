@@ -72,8 +72,9 @@
     border-radius: 100px;
 }
 
-
-
+.description-btn a:hover{ 
+    background-color: #1196d8;
+}
 
 
 .login-nav-bar-right{
@@ -92,6 +93,10 @@
     border-radius: 100px;
 }
     
+.splash-signup a:hover{
+    background-color: #1196d8;
+}
+
 
 .splash-login a {
     color: white;
