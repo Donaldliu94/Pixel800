@@ -15,3 +15,13 @@ Pixel800 is a photography website for professional and novice photographers that
 
 [Imgur](https://i.imgur.com/cM3ueo0.png)
 <a href="https://imgur.com/cM3ueo0"><img src="https://i.imgur.com/cM3ueo0.png" title="source: imgur.com" /></a>
+
+- User can upload images by selecting them from the file explorer which would bring them the upload form.
+
+</br>
+
+### Dynamic Photo Gallery 
+
+[Imgur](https://i.imgur.com/rHbf0Ou.png)
+<a href="https://imgur.com/rHbf0Ou"><img src="https://i.imgur.com/rHbf0Ou.png" title="source: imgur.com" /></a>
+
