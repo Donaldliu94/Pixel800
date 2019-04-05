@@ -117,7 +117,7 @@
 .user-body{
     display: flex;
     justify-content: center;
-    height: 200vh;
+    /* height: 200vh; */
 }
 
 .user-body-left {
@@ -196,6 +196,10 @@
     margin-bottom: 5px;
 }
 
+.girl-smiling{
+    width: 500px;
+    height: auto;
+}
 
 
 

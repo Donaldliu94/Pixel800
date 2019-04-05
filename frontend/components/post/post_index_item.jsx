@@ -30,8 +30,9 @@ const PostIndexItem = ({photo, currentUser}) => (
             {photo.title}
         </div>
         <div className="PostIndexItem-photo-username">
-            by {currentUser.username}
+                by {currentUser.username} • {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"][photo.created_at.slice(5, 7) - 1]  + " " + photo.created_at.slice(8, 10) + ", " + photo.created_at.slice(0, 4)}
         </div>
+
     </div>    
     </>
 

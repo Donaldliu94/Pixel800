@@ -63,6 +63,7 @@ class SessionForm extends React.Component {
         let topRightBtn = <div className="signup-btn"> {this.props.navLink} </div>;
         if (this.props.formType === "Sign up"){
             topRightBtn = <div className="login-btn"> {this.props.navLink} </div>;
+            
         }  
         return(
             <div className="login-page">
