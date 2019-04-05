@@ -13,3 +13,5 @@ Pixel800 is a photography website for professional and novice photographers that
 
 ### Photo Uploads 
 
+[Imgur](https://i.imgur.com/cM3ueo0.png)
+<a href="https://imgur.com/cM3ueo0"><img src="https://i.imgur.com/cM3ueo0.png" title="source: imgur.com" /></a>
