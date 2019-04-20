@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import Greeting from './greeting';
-import {createPost} from '../../actions/post_actions'
-import { openModal, closeModal } from '../../actions/modal_action'
+import {createPost} from '../../actions/post_actions';
+import { openModal, closeModal } from '../../actions/modal_action';
 
 
 const mapStateToProps = (state) => {
-    debugger
+    // debugger
     return {
         currentUser: state.entities.users[state.session.id],
         modalState: state.ui.modal

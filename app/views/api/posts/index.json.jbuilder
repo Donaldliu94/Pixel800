@@ -1,8 +1,17 @@
 
+json.posts do
+    @posts.each do |post|
+        json.set! post.id do 
+            json.extract! post, :id, :title, :description, :created_at, :photographer_id
+            json.photoUrl url_for(post.photo)
+        end
+    end
+end
 
-@posts.each do |post|
-    json.set! post.id do 
-        json.extract! post, :id, :title, :description, :created_at
-        json.photoUrl url_for(post.photo)
+json.users do
+    @users.each do |user|
+        json.set! user.id do
+            json.partial! 'api/users/user', user: user
+        end
     end
 end

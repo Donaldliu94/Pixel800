@@ -35,7 +35,7 @@ class SessionForm extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user).then(() => this.props.history.push("/home"), error => this.setState({ isValid: false }));
+        this.props.processForm(user).then(() => this.props.history.push("/homefeed"), error => this.setState({ isValid: false }));
         
     }
 
@@ -43,7 +43,7 @@ class SessionForm extends React.Component {
     handleDemo(e){
         e.preventDefault();
         const demo = Object.assign({}, {username:"Employer", password:"password"})
-        this.props.processForm(demo)
+        this.props.processForm(demo).then( () => this.props.history.push("/homefeed"))
     }
 
     renderErrors() {
@@ -59,69 +59,117 @@ class SessionForm extends React.Component {
 
     render() {
 
-
         let topRightBtn = <div className="signup-btn"> {this.props.navLink} </div>;
         if (this.props.formType === "Sign up"){
             topRightBtn = <div className="login-btn"> {this.props.navLink} </div>;
-            
         }  
-        return(
-            <div className="login-page">
-                {this.renderErrors()}
-                <nav className ="login-nav-bar">
-                    <div className="login-nav-bar-left">
-                        <div className="nav-logo">
-                            <a href="/">Pixel800</a>
-                        </div>
-                        <div className="nav-discover-logo">
-                            Discover
-                        </div>
-                        <div className="nav-about-logo">
-                            About
-                        </div>
-                        <div className="nav-studio-logo">
-                            Studio
-                        </div>
-                    </div>
 
-                    <div className="login-nav-bar-right">
-                        {topRightBtn}
-                    </div>
-
-                </nav>
-            <div className="login-flex">
-                
-                <div className = "login-form-container">
-                    <div className = "login-Pixel800">
-                        {this.props.formType + " to Pixel800"}
-                    </div> 
-                    <form onSubmit ={this.handleSubmit} className="login-form-box">
-                        <div className={ this.state.isValid ? "login-form" : "login-form error"}>
-                            <label>Username: 
-                                <br/>
-                                <input type="text" value={this.state.username} onChange={this.update("username")} onClick={this.resetValidState()} className="login-input"/>
-                            </label>
-
-                            <label>Password: 
-                                <br/>
-                                    <input type="password" value={this.state.password} onChange={this.update("password")} onClick={this.resetValidState()} className="login-input"/>
-                            </label>
-
-                            <input type="submit" value={this.props.formType} className="session-submit"/>
-                                
-                               
+        if (this.props.formType === "Log In"){
+            return(
+                <div className="login-page">
+                    {this.renderErrors()}
+                    <nav className ="login-nav-bar">
+                        <div className="login-nav-bar-left">
+                            <div className="nav-logo">
+                                <a href="/">Pixel800</a>
+                            </div>
+                            <div className="nav-discover-logo">
+                                Discover
+                            </div>
+                            <div className="nav-about-logo">
+                                About
+                            </div>
+                            <div className="nav-studio-logo">
+                                Studio
+                            </div>
                         </div>
-                    </form>
-                    <div style={{ height:'170px' }}>
-                    </div>
-                    <div className="no-account">
-                        Don't have an account? &nbsp; {this.props.navLink} &nbsp; or &nbsp;
-                        <span className="demo-link" onClick={this.handleDemo}>Demo User </span> 
+
+                        <div className="login-nav-bar-right">
+                            {topRightBtn}
+                        </div>
+                    </nav>
+                    <div className="login-flex">
+                        
+                        <div className = "login-form-container">
+                            <div className = "login-Pixel800">
+                                {this.props.formType + " to Pixel800"}
+                            </div> 
+                            <form onSubmit ={this.handleSubmit} className="login-form-box">
+                                <div className={ this.state.isValid ? "login-form" : "login-form error"}>
+                                    <label>Username: 
+                                        <br/>
+                                        <input type="text" value={this.state.username} onChange={this.update("username")} onClick={this.resetValidState()} className="login-input"/>
+                                    </label>
+
+                                    <label>Password: 
+                                        <br/>
+                                            <input type="password" value={this.state.password} onChange={this.update("password")} onClick={this.resetValidState()} className="login-input"/>
+                                    </label>
+                                    <input type="submit" value={this.props.formType} className="session-submit"/>
+                                </div>
+                            </form>
+                            <div style={{ height:'170px' }}></div>
+                            <div className="no-account">
+                                Don't have an account? &nbsp; {this.props.navLink} &nbsp; or &nbsp;
+                                <span className="demo-link" onClick={this.handleDemo}>Demo User </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        )
+            )
+        } else {
+            return (
+                <div className="login-page">
+                    {this.renderErrors()}
+                    <nav className="login-nav-bar">
+                        <div className="login-nav-bar-left">
+                            <div className="nav-logo">
+                                <a href="/">Pixel800</a>
+                            </div>
+                            <div className="nav-discover-logo">
+                                Discover
+                            </div>
+                            <div className="nav-about-logo">
+                                About
+                            </div>
+                            <div className="nav-studio-logo">
+                                Studio
+                            </div>
+                        </div>
+
+                        <div className="login-nav-bar-right">
+                            {topRightBtn}
+                        </div>
+                    </nav>
+                    <div className="login-flex">
+
+                        <div className="login-form-container">
+                            <div className="login-Pixel800">
+                                {this.props.formType + " to Pixel800"}
+                            </div>
+                            <form onSubmit={this.handleSubmit} className="login-form-box">
+                                <div className={this.state.isValid ? "login-form" : "login-form error"}>
+                                    <label>Username:
+                                        <br />
+                                        <input type="text" value={this.state.username} onChange={this.update("username")} onClick={this.resetValidState()} className="login-input" />
+                                    </label>
+
+                                    <label>Password:
+                                        <br />
+                                        <input type="password" value={this.state.password} onChange={this.update("password")} onClick={this.resetValidState()} className="login-input" />
+                                    </label>
+                                    <input type="submit" value={this.props.formType} className="session-submit" />
+                                </div>
+                            </form>
+                            <div style={{ height: '170px' }}></div>
+                            <div className="no-account">
+                                Already have an account? &nbsp; {this.props.navLink}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
     }
 }
 

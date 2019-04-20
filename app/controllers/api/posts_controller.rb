@@ -2,7 +2,8 @@ class Api::PostsController < ApplicationController
 #Pictures
 
     def index
-        @posts = Post.all
+        @posts = Post.all.includes(:user)
+        @users = User.all
         render :index
     end
 

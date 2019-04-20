@@ -7,7 +7,7 @@ class PostForm extends React.Component {
     constructor(props) {
         // debugger
         super(props)
-        debugger
+        // debugger
         this.state = {
             title: "",
             description: "",
@@ -34,11 +34,11 @@ class PostForm extends React.Component {
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
-            debugger
+            // debugger
             this.setState({ photoFile: file, photoUrl: fileReader.result, uploaded: true});     // you want to put uploaded:true here because if you put that code below, once you upload photo it would re-render and then jump to the render code below, and therefore you wouldn't hit this line, and don't have access to photoUrl.
         };
-        if (file) {
-            debugger
+        if (file) {             //when the file gets uploaded, the file becomes true and will call the fileReader.onloadened
+            // debugger
             fileReader.readAsDataURL(file);
         }
     }
@@ -59,7 +59,7 @@ class PostForm extends React.Component {
             photoUrl: "",
             uploaded: false,
 
-        })
+        });
     }
 
 
@@ -67,7 +67,7 @@ class PostForm extends React.Component {
     // 
     render() {
         // this.state.uploaded ? 
-        debugger
+        // debugger
         return this.state.uploaded ?  
             <div className="uploading-picture-form1">
 
@@ -79,13 +79,13 @@ class PostForm extends React.Component {
                     <div className="uploading-picture-form1-left-upload">
                         <label htmlFor="files" className="fake-upload-form-btn-2">
                             <FontAwesomeIcon icon={['fas', 'plus']} /> 
-                            <div>Add more photos</div>  
+                            <div>Change photo</div>  
                             <input type="file" className="upload-form-btn" onChange={this.handleFile} id="files" />
                             </label>
                     </div>
                 </div>
 
-                    <form onSubmit={ () => this.handleSubmit()} >  
+                    <form onSubmit={ () => this.handleSubmit()} >           {/* this isn't needed  */}
                         <div className="uploading-picture-form1-right">
                             <button onClick={this.handleSubmit}>Submit</button>
 
@@ -101,7 +101,7 @@ class PostForm extends React.Component {
             :
             <div className="uploading-picture-form2">
                 <div>
-                    <form onSubmit={ () => this.handleSubmit}>
+                    <form onSubmit={ () => this.handleSubmit}>      {/*this handlesubmit isn't needed */}
                         <label htmlFor="files" className="fake-upload-form-btn-1">Select Photos
                             <input type="file" className="upload-form-btn" onChange={this.handleFile} id="files"/>
                         </label>

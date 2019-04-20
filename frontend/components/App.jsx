@@ -11,7 +11,9 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import PostFormContainer from './post/post_form_container.jsx';
-import PostIndex from './post/post_index_container'
+import PostIndex from './post/post_index_container';
+import PhotoDetailContainer from './photo/photo_detail_container';
+import HomeFeedContainer from './home_feed/home_feed_container';
 
 library.add(fab, fas, far)
 
@@ -23,10 +25,13 @@ const App = () => {
         <div>
             <AuthRoute exact path="/" component={SplashContainer} />
             <ProtectedRoute path="/home" component={GreetingContainer} />
+            <ProtectedRoute path="/homefeed" component={GreetingContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <ProtectedRoute exact path="/home/posts/create" component={PostFormContainer} />
             <ProtectedRoute path="/home" component={PostIndex} />
+            <ProtectedRoute exact path="/pictures/:postId" component={PhotoDetailContainer} />
+            <ProtectedRoute exact path="/homefeed" component={HomeFeedContainer}/>
         </div>
     )
 }

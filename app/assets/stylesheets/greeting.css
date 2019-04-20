@@ -154,17 +154,28 @@
 .icon-comment {
     font-size: 28px;
     margin-left: 24px;
+    cursor: pointer;
 }
 
 .icon-plus-square {
     font-size: 28px;
     margin-left: 24px;
+    cursor: pointer;
 }
 
 .icon-plus-square:hover {
     color: #0970D0;
 }
 
+.icon-times-symbol {
+    font-size: 28px;
+    margin-left: 24px;
+    cursor: pointer;
+}
+
+.icon-times-symbol:hover {
+    color: #0970D0;
+}
 
 .korea-hill{
     margin-bottom: 5px;

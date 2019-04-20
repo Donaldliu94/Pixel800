@@ -8,13 +8,13 @@ import PostFormContainer from '../post/post_form_container';
 class Greeting extends React.Component {
 
     constructor(props){
-        super(props)
+        super(props);
         this.state = {
             title: "",
             description: "",
             photoFile: null,
             // uploadForm: false
-        }
+        };
         // this.handleInput = this.handleInput.bind(this)
         // this.handleFile = this.handleFile.bind(this)
         // this.handleSubmit = this.handleSubmit.bind(this)

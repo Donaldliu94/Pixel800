@@ -10,10 +10,12 @@ export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
 
 
-const receiveAllPosts = (posts) => {
+const receiveAllPosts = (payload) => {
+    debugger
     return({
         type: RECEIVE_ALL_POSTS,
-        posts: posts
+        posts: payload.posts,
+        users: payload.users
     });
 };
 
@@ -76,6 +78,6 @@ export const createPost = (post) => (dispatch) => {
 
 export const deletePost = (id) => (dispatch) => {
     return(
-        APIUtil.deletePost(id).then( (post) => dispatch(removePost(post)))
+        APIUtil.deletePost(id).then( () => dispatch(removePost(id)))        // i had postId in the response which wasn't an iD, it was the return of render show which was an object, and we needed a number
     );
 };

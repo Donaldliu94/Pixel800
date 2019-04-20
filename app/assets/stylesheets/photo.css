@@ -1,0 +1,163 @@
+
+
+
+
+.single-photo{
+    width: 550px;
+    height: auto;
+}
+
+
+.post-detail-top{
+    display: flex;
+    justify-content: center;
+    background-color: #222222;
+    min-height: 500px; 
+    align-items: center;
+}
+
+
+.post-detail-bottom{
+    padding: 0px 64px;
+    display: flex;
+    justify-content: center;
+    height: 600px;
+}
+
+
+.post-detail-bottom-inner{
+    display: flex;
+    justify-content: space-between;
+    width: 1100px;
+}
+
+
+.post-detail-bottom-left{
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-top: 32px;
+    /* background-color: aqua; */
+    width: 450px;
+}
+
+.photo-detail-topline{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(215, 216, 219);
+    margin-bottom: 32px;
+}
+
+.photo-detail-topline-left{
+    width: 100%;
+}
+
+.PostIndexItem-photo-title .post-detail-title{
+    font-weight: bold;
+}
+
+.PostIndexItem-photo-username{
+    width: 100%;
+}
+
+.photo-detail-user-icon{
+    color: #BAC0C5;
+    font-size: 40px;
+
+}
+
+.PostIndexItem-photo-username .photo-detail{
+    /* border-bottom: 1px solid rgb(215, 216, 219); */
+    /* padding-bottom: 30px; */
+}
+
+
+
+.Pulse-Views-Popular{
+    display: flex;
+    justify-content: column;
+    margin: 32px 0px;
+}
+
+.PVP-word{
+    font-size: 18px;
+    margin-bottom: 8px;
+    padding-right: 32px;
+}
+
+.PVP-number{
+    font-size: 24px;
+    padding-right: 32px;
+}
+
+
+.camera-specs{
+    margin-bottom: 32px;
+}
+
+.camera-specs .camera-specs-camera-icon,.camera-specs-aperture{
+    margin-bottom: 16px;
+}
+
+
+.camera-specs{
+    font-size: 18px;
+}
+
+.post-detail-category{
+    font-size: 18px;
+}
+
+
+
+.post-detail-bottom-right{
+    /* background-color: red; */
+    width: 450px;
+}
+
+
+
+
+.photo-detail-exit{
+    color: rgb(238, 239, 242);
+    font-size: 26px;
+    position: absolute;
+    margin: 50px;
+}
+
+
+.photo-detail-comment-number{
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 80px;
+    margin-bottom: 24px;
+}
+
+.photo-detail-adding-comment{
+    display: flex;
+    align-items: center;
+}
+
+.inner-add-comment-box{
+    width: 278px;
+    padding: 16px;
+    border: 1px solid #6D7378;  
+}
+
+.outer-add-comment-box{
+    padding: 0px 0px 0px 16px;
+}
+
+.photo-detail-add-comment-user-icon{
+    font-size: 32px;
+    color: #BAC0C5;
+}
+
+
+.photo-detail-nav-bar{
+    display: flex;
+    height: 50px;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    transition-duration: 0.3s;
+}

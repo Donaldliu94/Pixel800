@@ -18,9 +18,9 @@ export const fetchPost = (id) => {
     return(
         $.ajax({
             method: "GET",
-            url: `api/posts/${postId}`
+            url: `api/posts/${id}`          //why is this not postId?
         })
-    )
+    );
 }
 
 
@@ -39,6 +39,7 @@ export const createPost = (post) => {
 
 
 export const deletePost = (id) => {
+
     return(
         $.ajax({
             method: "DELETE",

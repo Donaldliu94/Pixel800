@@ -4,7 +4,8 @@ import PostIndexItem from './post_index_item';
 class PostIndex extends React.Component {
 
     constructor(props){
-        super(props)
+        super(props);
+        // debugger
     }
 
     componentDidMount() {
@@ -12,17 +13,27 @@ class PostIndex extends React.Component {
     }
 
     render(){
+        debugger
         let leftArray = [];
         let rightArray = [];
         this.props.photos.forEach( (photo, idx) =>{
             // debugger
             if (idx % 2 === 0){
-                leftArray.unshift(<PostIndexItem photo={photo} key={idx} currentUser={this.props.currentUser} />)
+                debugger
+                if (this.props.currentUser.id === photo.photographer_id ){ 
+                    // debugger // this is an array iteration. maybe make it a hash map?
+                    leftArray.unshift(<PostIndexItem photo={photo} key={idx} currentUser={this.props.currentUser} deletePost={this.props.deletePost} users={this.props.users}/>)
+                }
+                // debugger
             } else{
-                rightArray.unshift(<PostIndexItem photo={photo} key={idx} currentUser={this.props.currentUser} />)
+                debugger
+
+                if (this.props.currentUser.id === photo.photographer_id ){
+                    rightArray.unshift(<PostIndexItem photo={photo} key={idx} currentUser={this.props.currentUser} deletePost={this.props.deletePost} users={this.props.users} />)
+                }
             }
 
-        })
+        });
 
         // debugger                //this debugger will let you see that initially there is no photos then you will be able to see the photos in an array
         return(

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import PostIndex from './post_index';
+import HomeFeed from './home_feed';
 import { fetchPosts, deletePost } from '../../actions/post_actions';
 
 
@@ -23,4 +23,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeFeed);
