@@ -18,7 +18,7 @@ class HomeFeed extends React.Component {
         let leftArray = [];
         let middleArray = [];
         let rightArray = [];
-        debugger
+        // debugger
         // const { photos } = this.props;}
         // while (photos.length > 0) {
         //     const val = Math.floor(Math.random() * 3);

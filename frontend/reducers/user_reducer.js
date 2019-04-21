@@ -19,7 +19,7 @@ const usersReducer = (state = {}, action) => {
             return action.users;
 
         case RECEIVE_ALL_POSTS:
-        debugger
+        // debugger
             return action.users;
         
         default:

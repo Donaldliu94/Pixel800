@@ -15,18 +15,28 @@ class PhotoDetail extends React.Component {
         };
     }
     componentDidMount() {                                            //what was the point of this? is it needed?
+        debugger          
         this.props.fetchPost(this.props.match.params.postId);
     }
-    render(){
 
+    // componentDidUpdate(prevProps) {
+    //     debugger
+    //     if (prevProps.match.params.postId !== this.props.match.params.postId) {
+    //         this.props.fetchPost(this.props.match.params.postId);
+    //     }
+    // }
+
+    render(){
+        // debugger
+        if (this.props.photo === undefined) return null;            //this is to fix the problem when you refresh from show page to show page
         let photo = this.props.photo;
-        let title = photo.title || "";
-        let photoUrl = photo.photoUrl || "";
-        let createdAt = photo.created_at || "";
+        let title = photo.title;
+        let photoUrl = photo.photoUrl;
+        let createdAt = photo.created_at;
         let currentUser = this.props.currentUser;
         
 
-        // debugger
+        debugger
         // if (photo !== undefined) {
 
             return(

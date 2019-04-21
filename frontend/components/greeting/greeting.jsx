@@ -57,7 +57,7 @@ class Greeting extends React.Component {
                     <div className="user-nav-bar-left">
                         
                         <div className="user-nav-logo">
-                            <a href="/">Pixel800</a>
+                            <a href="/#/homefeed">Pixel800</a>
                         </div>
 
                         <div className="user-nav-discover">

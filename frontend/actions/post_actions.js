@@ -11,7 +11,7 @@ export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
 
 const receiveAllPosts = (payload) => {
-    debugger
+    // debugger
     return({
         type: RECEIVE_ALL_POSTS,
         posts: payload.posts,

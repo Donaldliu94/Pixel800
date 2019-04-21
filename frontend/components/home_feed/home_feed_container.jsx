@@ -6,7 +6,7 @@ import { fetchPosts, deletePost } from '../../actions/post_actions';
 
 
 const mapStateToProps = (state) => {
-    debugger
+    // debugger
     return {
         users: state.entities.users,
         currentUser: state.entities.users[state.session.id],

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 
 const PostIndexItem = ({photo, currentUser, deletePost, users}) => {
-    debugger
+    // debugger
     return(
         <>
         <div className="PostIndexItem-photo">
@@ -29,9 +29,9 @@ const PostIndexItem = ({photo, currentUser, deletePost, users}) => {
                     <FontAwesomeIcon icon={['far', 'plus-square']} />
                 </div>
 
-                <div className="icon-times-symbol">
+                {/* <div className="icon-times-symbol">
                         <span onClick={() => deletePost(photo.id)}><FontAwesomeIcon icon={['fas', 'times']} /></span>
-                </div>
+                </div> */}
             </div>
             <div className="PostIndexItem-photo-title">
                 {photo.title}

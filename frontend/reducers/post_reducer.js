@@ -8,7 +8,7 @@ export default (state = {}, action) => {
     // debugger
     switch(action.type){
         case RECEIVE_ALL_POSTS:
-        debugger
+        // debugger
             return action.posts;
         case RECEIVE_POST:
         // debugger
