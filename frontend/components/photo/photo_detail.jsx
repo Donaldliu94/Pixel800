@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import PostFormContainer from '../post/post_form_container';
+import Logo from '../../logo/navbar_logo';
 
 
 class PhotoDetail extends React.Component {
@@ -34,7 +35,16 @@ class PhotoDetail extends React.Component {
         let photoUrl = photo.photoUrl;
         let createdAt = photo.created_at;
         let currentUser = this.props.currentUser;
-        
+        let deletePhoto = 
+            <span onClick={() => {
+                this.props.deletePost(photo.id).then(() => this.props.history.push("/home"))
+            }}><FontAwesomeIcon icon={['fas', 'times']} /></span>
+
+
+        if (this.props.photo.photographer_id !== this.props.currentUser.id){
+            deletePhoto = null;
+        }
+
 
         debugger
         // if (photo !== undefined) {
@@ -45,7 +55,7 @@ class PhotoDetail extends React.Component {
                         <div className="user-nav-bar-left">
 
                             <div className="user-nav-logo">
-                                <a href="/">Pixel800</a>
+                                <a href="/"><Logo/></a>
                             </div>
 
                             <div className="user-nav-discover">
@@ -155,9 +165,7 @@ class PhotoDetail extends React.Component {
                                         </div>
 
                                         <div className="icon-times-symbol">
-                                            <span onClick={() => {
-                                                this.props.deletePost(photo.id).then( () => this.props.history.push("/home"))
-                                                } }><FontAwesomeIcon icon={['fas', 'times']} /></span>
+                                                {deletePhoto}
                                         </div>
                                     </div>
 

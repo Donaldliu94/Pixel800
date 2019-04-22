@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-
+import Logo from '../../logo/navbar_logo';
 
 
 class SessionForm extends React.Component {
@@ -84,8 +84,8 @@ class SessionForm extends React.Component {
                     {this.renderErrors()}
                     <nav className ="login-nav-bar">
                         <div className="login-nav-bar-left">
-                            <div className="nav-logo">
-                                <a href="/">Pixel800</a>
+                            <div className="nav-logo-session-logo">
+                                <a href="/"><Logo/></a>
                             </div>
                             <div className="nav-discover-logo">
                                 Discover

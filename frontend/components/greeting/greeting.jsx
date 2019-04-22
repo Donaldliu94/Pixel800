@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PostFormContainer from '../post/post_form_container';
+import Logo from '../../logo/navbar_logo';
 
 
 
@@ -50,14 +51,14 @@ class Greeting extends React.Component {
 
 
     render() {
-            return <div>
+            return <div className="profile-layout">
 
 
                 <nav className="user-nav-bar">
                     <div className="user-nav-bar-left">
                         
                         <div className="user-nav-logo">
-                            <a href="/#/homefeed">Pixel800</a>
+                            <a href="/#/homefeed"><Logo/></a>
                         </div>
 
                         <div className="user-nav-discover">
@@ -146,12 +147,12 @@ class Greeting extends React.Component {
                     </div>
                 </nav>
 
-                <hgroup className="header-group">
+                {/* <hgroup className="header-group">
                         <div className="editors-choice">
                         <h2>This week in Editors' Choice:</h2>
                         Gallery by Pixel800: {this.props.currentUser.username}
                         </div>
-                </hgroup>
+                </hgroup> */}
 
 
                 

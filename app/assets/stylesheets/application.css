@@ -95,7 +95,8 @@ body {
     /* font-family: "Roboto", sans-serif; */
     font-family: "Helvetica Neue", HelveticaNeue, Helvetica, TeXGyreHeros, FreeSans, "Nimbus Sans L", "Liberation Sans", Arial, sans-serif;
 
-    background-color: #eeeff2;
+    /* background-color: #eeeff2; */
+    background-color: #f7f8fa;
     margin: 0;
 }
 

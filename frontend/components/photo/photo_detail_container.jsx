@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import PhotoDetail from './photo_detail';
+import { logout } from '../../actions/session_actions';
 import {fetchPost, deletePost} from '../../actions/post_actions';
 import { openModal, closeModal } from '../../actions/modal_action';
 
@@ -28,7 +29,8 @@ const mapDispatchToProps = (dispatch) => {
         fetchPost: (id) => dispatch(fetchPost(id)),
         openModal: () => dispatch(openModal()),
         closeModal: () => dispatch(closeModal()),
-        deletePost: (id) => dispatch(deletePost(id))
+        deletePost: (id) => dispatch(deletePost(id)),
+        logout: () => dispatch(logout()),
     };
 };
 

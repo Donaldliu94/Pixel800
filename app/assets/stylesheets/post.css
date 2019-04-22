@@ -312,19 +312,73 @@ body.modal-open {
 
 
 
+.header-group{
+    background-color: white;
+}
+
+.profile-layout{
+    background-color: white;
+}
+
+
 /* Profile */
 
 .profile-sub-categories{
     display: flex;
     justify-content: center;
+    border-top: 1px solid #eeeff2;
+    border-bottom: 1px solid #eeeff2;
+    background-color: white;
+    height: 50px;
 }
 
 .profile-sub-categories div{
     margin: 0 10px;
     font-size: 14px;
-    height: 50px;
-    border-top: 1px solid #eeeff2;
-    border-bottom: 1px solid #eeeff2;
+    font-weight: bold;
     color: #71767a;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.profile-sub-categories div:active{
+    color: #0699E5;
+    border-bottom: 2px solid #0099e5;
+}
+
+
+.profile-user-detail{
+    text-align: center;
+    background-color: white;
+    padding-bottom: 20px;
+}
+
+.profile-user-detail-icon .icon{
+    color: #BAC0C5;
+    height: 100px;
+    width: 100px;
+}
+
+.profile-user-detail-username{
+    color: #525558;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.profile-user-detail-sub{
+    display: flex;
+    justify-content: center;
+}
+
+.profile-user-detail-sub div{
+    margin: 0 10px;
+    color: #b9c1c7;
+    font-size: 14px;
+}
+
+.profile-user-detail-cover-photo{
+    height: 130px;
+    border-bottom: 1px solid #eeeff2;
+    margin-bottom: -57px;
 }

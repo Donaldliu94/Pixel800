@@ -1,5 +1,9 @@
 import React from 'react';
 import PostIndexItem from './post_index_item';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+
+
 
 class PostIndex extends React.Component {
 
@@ -40,7 +44,37 @@ class PostIndex extends React.Component {
         // debugger                //this debugger will let you see that initially there is no photos then you will be able to see the photos in an array
         return(
 
-            <div className="profile-header">
+            <div className="profile-entire">
+                <div className="profile-user-detail">
+
+                    <div className="profile-user-detail-cover-photo">
+                    </div>
+
+                    <div className="profile-user-detail-icon">
+                        <FontAwesomeIcon icon={['fas', 'user-circle']} className="icon" />
+                    </div>
+
+                    <div className="profile-user-detail-username">
+                        {this.props.currentUser.username}
+                    </div>
+
+                    <div className="profile-user-detail-sub">
+                        <div className="profile-affection">
+                            Affection
+                        </div>
+                        <div className="profile-photoviews">
+                            Photo Views
+                        </div>
+                        <div className="profile-followers">
+                            Followers
+                        </div>
+                        <div className="profile-following">
+                            Following
+                        </div>
+                    </div>
+                </div> 
+
+
                 <div className="profile-sub-categories">
                     <div className="sub-categories-photos">
                         PHOTOS

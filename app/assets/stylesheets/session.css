@@ -177,3 +177,15 @@ label{
 }
 
 
+
+
+
+
+.nav-logo-session-logo a {
+    stroke:#71767a;
+    fill: #71767a;
+}
+.nav-logo-session-logo a svg:hover{
+    stroke:#0099e5;
+    fill: #0099e5;
+}
