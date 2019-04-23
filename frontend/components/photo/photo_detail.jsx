@@ -14,18 +14,28 @@ class PhotoDetail extends React.Component {
             description: "",
             photoFile: null,
         };
+        // this.fromHome = true
     }
     componentDidMount() {                                            //what was the point of this? is it needed?
-        debugger          
+        // debugger          
         this.props.fetchPost(this.props.match.params.postId);
     }
 
     // componentDidUpdate(prevProps) {
-    //     debugger
-    //     if (prevProps.match.params.postId !== this.props.match.params.postId) {
-    //         this.props.fetchPost(this.props.match.params.postId);
+    //     // debugger
+    //     if (prevProps.match.path !== "/home") {
+    //         this.fromHome = false;
+    //         console.log(this.fromHome)
     //     }
+
     // }
+
+
+    // componentWillReceiveProps(nextProps) {
+    //     console.log(nextProps)
+    //     // debugger
+    // }
+
 
     render(){
         // debugger
@@ -33,6 +43,8 @@ class PhotoDetail extends React.Component {
         let photo = this.props.photo;
         let title = photo.title;
         let photoUrl = photo.photoUrl;
+        // debugger
+        // let x = console.log(window.location.href);
         let createdAt = photo.created_at;
         let currentUser = this.props.currentUser;
         let deletePhoto = 
@@ -41,12 +53,20 @@ class PhotoDetail extends React.Component {
             }}><FontAwesomeIcon icon={['fas', 'times']} /></span>
 
 
+        let goBack = 
+            <span onClick={() => {
+                this.props.history.goBack();
+            }}><FontAwesomeIcon icon={['fas', 'times']} className="photo-detail-exit" /></span>
+
+
         if (this.props.photo.photographer_id !== this.props.currentUser.id){
             deletePhoto = null;
         }
 
+        // if (this.props.match.path )
 
-        debugger
+
+        // debugger
         // if (photo !== undefined) {
 
             return(
@@ -137,7 +157,8 @@ class PhotoDetail extends React.Component {
 
 
                     <div className="post-detail-page">
-                        <Link to="/home"><FontAwesomeIcon icon={['fas', 'times']} className="photo-detail-exit"/></Link>
+                        { goBack }
+                        {/* <Link to="/home"><FontAwesomeIcon icon={['fas', 'times']} className="photo-detail-exit"/></Link> */}
                         
                         <div className="post-detail-top">
                             <div className="post-detail-picture">

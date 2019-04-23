@@ -16,10 +16,13 @@ class PostIndex extends React.Component {
         this.props.fetchPosts();
     }
 
+    componentWillUnmount(){
+        // debugger
+    }
     
 
     render(){
-        // debugger
+        debugger
         let leftArray = [];
         let rightArray = [];
         this.props.photos.forEach( (photo, idx) =>{

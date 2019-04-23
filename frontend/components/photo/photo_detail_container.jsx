@@ -9,7 +9,7 @@ import { openModal, closeModal } from '../../actions/modal_action';
 
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    // debugger
     const photo_object = state.entities.posts[ownProps.match.params.postId]
     //  || {};
 
