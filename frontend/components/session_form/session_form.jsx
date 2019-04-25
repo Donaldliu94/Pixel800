@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Logo from '../../logo/navbar_logo';
+import Typed from "typed.js";
 
 
 class SessionForm extends React.Component {
@@ -42,8 +43,28 @@ class SessionForm extends React.Component {
 
     handleDemo(e){
         e.preventDefault();
-        const demo = Object.assign({}, {username:"Employer", password:"password"})
-        this.props.processForm(demo).then( () => this.props.history.push("/homefeed"))
+
+        new Typed(".login-input", {
+        strings: ["Employer"],
+        typeSpeed: 75})
+
+
+
+        setTimeout( () => {
+
+            new Typed(".password-input", {
+                strings: ["password"],
+                typeSpeed: 75})
+        }, 750)
+
+        
+        setTimeout( () => {
+            const demo = Object.assign({}, { username: "Employer", password: "password" })
+            this.props.processForm(demo).then(() => this.props.history.push("/homefeed"))
+        }, 1400)
+
+        
+
     }
 
     renderErrors() {
@@ -117,7 +138,7 @@ class SessionForm extends React.Component {
 
                                     <label>Password: 
                                         <br/>
-                                            <input type="password" value={this.state.password} onChange={this.update("password")} onClick={this.resetValidState()} className="login-input"/>
+                                            <input type="password" value={this.state.password} onChange={this.update("password")} onClick={this.resetValidState()} className="password-input"/>
                                     </label>
                                     <input type="submit" value={this.props.formType} className="session-submit"/>
                                 </div>

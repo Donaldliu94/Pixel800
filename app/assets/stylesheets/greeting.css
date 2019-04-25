@@ -80,15 +80,39 @@
 }
 
 
+.auto{
+    position: static;
+}
+
+.auto-list{
+    position: absolute;
+    list-style: none;
+    border: none;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    padding: 0px;
+    margin: 0px;
+    background-color: white;
+}
+
+.auto ul li{
+    padding: 5px;
+    color: black;
+}
+
+.auto ul li:hover{
+    background-color: #E8EAED;
+}
 
 .search{
-    padding:3px 8px;
-    border-radius:50px;
-    border:solid 1px;
-    overflow:hidden;
+    /* padding:3px 8px; */
+    border-radius:50px;  
+    /* border: 1px solid; */
+    overflow:hidden; 
     white-space: nowrap;
-}
-.search input{
+} 
+
+.search input{      
     margin: 0;
     margin-left: 4px;
     padding:0;

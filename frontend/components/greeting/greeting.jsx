@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PostFormContainer from '../post/post_form_container';
 import Logo from '../../logo/navbar_logo';
-
+import Search from '../search/search'
 
 
 class Greeting extends React.Component {
@@ -85,8 +85,9 @@ class Greeting extends React.Component {
                     <div className="user-nav-bar-right">                    
                         <form >
                             <label className="search">
-                                <FontAwesomeIcon icon={['fas', 'search']} />
-                                <input placeholder="Search for photos, location, or people" ></input>
+                                {/* <FontAwesomeIcon icon={['fas', 'search']} /> */}
+                                {/* <input placeholder="Search for photos, location, or people" ></input> */}
+                                <Search/>
                             </label>
                         </form>
 

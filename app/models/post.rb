@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
     validates :title, :photographer_id, presence: true
-
+    validates :title, length: {maximum: 50}, allow_nil: true
 
     has_one_attached :photo
 
