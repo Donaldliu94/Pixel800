@@ -30,6 +30,7 @@ class Api::PostsController < ApplicationController
 
     def destroy
         @post = current_picture
+        # debugger
         if @post
             @post.destroy
             render :show

@@ -21,6 +21,14 @@ class User < ApplicationRecord
     class_name: :Post,
     foreign_key: :photographer_id
 
+    has_many :likes,
+    class_name: :Like,
+    foreign_key: :user_id
+
+
+    has_many :liked_posts,
+    through: :likes,
+    source: :post
 
 
     def password=(password)

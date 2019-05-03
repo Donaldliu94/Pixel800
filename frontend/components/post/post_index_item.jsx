@@ -5,8 +5,11 @@ import { Link } from 'react-router-dom';
 
 
 
-const PostIndexItem = ({photo, currentUser, deletePost, users}) => {
-    // debugger
+const PostIndexItem = ({photo, currentUser, deletePost, users, createLike, deleteLike}) => {
+    debugger
+
+
+
     return(
         <>
         <div className="PostIndexItem-photo">
@@ -18,7 +21,12 @@ const PostIndexItem = ({photo, currentUser, deletePost, users}) => {
 
             <div className="PostIndexItem-photo-attributes">
                 <div className="icon-heart">
-                    <FontAwesomeIcon icon={['far', 'heart']} />
+                    {photo.liker_ids.includes(currentUser.id) ? 
+                        <span onClick={ () => deleteLike(currentUser.id)}><FontAwesomeIcon icon={['far', 'heart']} /></span>
+                        :
+                        <span onClick={ () => createLike(photo.id)}><FontAwesomeIcon icon={['far', 'heart']} /></span>
+                    }
+                        
                 </div>
 
                 <div className="icon-comment">
@@ -30,7 +38,7 @@ const PostIndexItem = ({photo, currentUser, deletePost, users}) => {
                 </div>
 
                 {/* <div className="icon-times-symbol">
-                        <span onClick={() => deletePost(photo.id)}><FontAwesomeIcon icon={['fas', 'times']} /></span>
+                        // <span onClick={() => deletePost(photo.id)}><FontAwesomeIcon icon={['fas', 'times']} /></span>
                 </div> */}
             </div>
             <div className="PostIndexItem-photo-title">
