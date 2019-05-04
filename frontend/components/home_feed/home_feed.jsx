@@ -28,7 +28,7 @@ class HomeFeed extends React.Component {
             if (i === combineArray.length) {
                 i = 0;
             }
-            combineArray[i].unshift((<PostIndexItem photo={photo} key={idx} currentUser={this.props.currentUser} deletePost={this.props.deletePost} users={this.props.users} createLike={this.props.createLike}/>));
+            combineArray[i].unshift((<PostIndexItem photo={photo} key={idx} currentUser={this.props.currentUser} deletePost={this.props.deletePost} users={this.props.users} createLike={this.props.createLike} deleteLike={this.props.deleteLike} likes={this.props.likes}/>));
             i++;
             idx++;
         }

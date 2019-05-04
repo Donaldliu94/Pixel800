@@ -10,7 +10,8 @@ const mapStateToProps = (state) => {
     return {
         users: state.entities.users,
         currentUser: state.entities.users[state.session.id],
-        photos: Object.values(state.entities.posts) // by doing this you literally are paying attention to all the photos
+        photos: Object.values(state.entities.posts), // by doing this you literally are paying attention to all the photos
+        likes: state.entities.likes
     };
 };
 

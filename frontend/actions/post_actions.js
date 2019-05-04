@@ -15,7 +15,8 @@ const receiveAllPosts = (payload) => {
     return({
         type: RECEIVE_ALL_POSTS,
         posts: payload.posts,
-        users: payload.users
+        users: payload.users,
+        likes: payload.likes
     });
 };
 

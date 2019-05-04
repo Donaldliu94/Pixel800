@@ -5,9 +5,21 @@ import { Link } from 'react-router-dom';
 
 
 
-const PostIndexItem = ({photo, currentUser, deletePost, users, createLike, deleteLike}) => {
-    debugger
+const PostIndexItem = ({photo, currentUser, deletePost, users, createLike, deleteLike, likes}) => {
 
+
+
+    // let userLikes = Object.values(likes).map( (like) => {
+    //     return like.user_id
+    // })    
+
+    let userLikes = photo.like_ids.map( (like) => {
+        return likes[like].user_id
+    })
+    let likearray = []
+    Object.values(likes).forEach(element => {
+        likearray.push(element.id)
+    });
 
 
     return(
@@ -21,8 +33,9 @@ const PostIndexItem = ({photo, currentUser, deletePost, users, createLike, delet
 
             <div className="PostIndexItem-photo-attributes">
                 <div className="icon-heart">
-                    {photo.liker_ids.includes(currentUser.id) ? 
-                        <span onClick={ () => deleteLike(currentUser.id)}><FontAwesomeIcon icon={['far', 'heart']} /></span>
+                    { userLikes.includes(currentUser.id) ? 
+                        // <span onClick={() => console.log("hello")}><FontAwesomeIcon icon={['far', 'heart']} /></span> 
+                        <span onClick={() => deleteLike(photo.id)}><FontAwesomeIcon icon={['far', 'heart']} /></span> 
                         :
                         <span onClick={ () => createLike(photo.id)}><FontAwesomeIcon icon={['far', 'heart']} /></span>
                     }

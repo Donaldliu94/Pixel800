@@ -6,25 +6,28 @@ import { RECEIVE_LIKE, RECEIVE_ALL_LIKES, REMOVE_LIKE } from '../actions/like_ac
 
 export default (state = {}, action) => {
     Object.freeze(state);
-    // debugger
-
+    
     const newState = merge({}, state);
+    // debugger
 
     switch(action.type){
         case RECEIVE_ALL_POSTS:
         // debugger
             return action.posts;
         case RECEIVE_POST:
-        // debugger
+        // debugger                 
             return merge({}, state, {[action.post.id]: action.post});
         case REMOVE_POST:
         // debugger
             delete newState[action.postId];
             return newState;
 
+
+
         case RECEIVE_LIKE:
-            debugger
+            // debugger
             // newState[action.like.post_id].liker_ids.push({id: action.like.id, user: action.like.user_id})       //this accesses the specific post and then access the array in that post
+            newState[action.post.id] = action.post
             return newState
         case REMOVE_LIKE:
             delete newState[action.like.post_id].liker_ids[action.like.user_id]

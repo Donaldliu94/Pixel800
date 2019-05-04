@@ -31,14 +31,14 @@ class PostIndex extends React.Component {
                 // debugger
                 if (this.props.currentUser.id === photo.photographer_id ){ 
                     // debugger // this is an array iteration. maybe make it a hash map?
-                    leftArray.unshift(<PostIndexItem photo={photo} key={idx} currentUser={this.props.currentUser} deletePost={this.props.deletePost} users={this.props.users} createLike={this.props.createLike} deleteLike={this.props.deleteLike}/>)
+                    leftArray.unshift(<PostIndexItem photo={photo} key={idx} currentUser={this.props.currentUser} deletePost={this.props.deletePost} users={this.props.users} createLike={this.props.createLike} deleteLike={this.props.deleteLike} likes={this.props.likes}/>)
                 }
                 // debugger
             } else{
                 // debugger
 
                 if (this.props.currentUser.id === photo.photographer_id ){
-                    rightArray.unshift(<PostIndexItem photo={photo} key={idx} currentUser={this.props.currentUser} deletePost={this.props.deletePost} users={this.props.users} createLike={this.props.createLike}/>)
+                    rightArray.unshift(<PostIndexItem photo={photo} key={idx} currentUser={this.props.currentUser} deletePost={this.props.deletePost} users={this.props.users} createLike={this.props.createLike} deleteLike={this.props.deleteLike} likes={this.props.likes}/>)
                 }
             }
 

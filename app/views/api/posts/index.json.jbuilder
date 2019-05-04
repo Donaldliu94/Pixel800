@@ -2,7 +2,8 @@
 json.posts do
     @posts.each do |post|
         json.set! post.id do 
-            json.extract! post, :id, :title, :description, :created_at, :photographer_id, :liker_ids
+            json.extract! post, :id, :title, :description, :created_at, :photographer_id, :like_ids    #liker_ids will be populated here after its coming back from the backend
+            # debugger
             json.photoUrl url_for(post.photo)
         end
     end
@@ -15,3 +16,14 @@ json.users do
         end
     end
 end
+
+
+json.likes do
+    @likes.each do |like|
+        json.set! like.id do
+            json.extract! like, :id, :user_id, :post_id
+        end
+    end
+end
+
+

@@ -41,6 +41,7 @@ class PhotoDetail extends React.Component {
         // debugger
         if (this.props.photo === undefined) return null;            //this is to fix the problem when you refresh from show page to show page
         let photo = this.props.photo;
+        // debugger
         let title = photo.title;
         let photoUrl = photo.photoUrl;
         // debugger

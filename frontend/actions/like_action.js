@@ -16,11 +16,12 @@ const receiveAllLikes = (likes) => {
     })
 }
 
-const receiveLike = (like) => {
-    debugger
+const receiveLike = (payload) => {
+    // debugger
     return({
         type: RECEIVE_LIKE,
-        like: like
+        like: payload.like,
+        post: payload.post
     })
 }
 
@@ -39,9 +40,9 @@ export const fetchLikes = () => (dispatch) => {
 }
 
 export const createLike = (like) => (dispatch) => {
-    debugger
+    // debugger
     return(
-        APIUtil.createLike(like).then( (like) => dispatch(receiveLike(like)))
+        APIUtil.createLike(like).then( (payload) => dispatch(receiveLike(payload)))
     );
 };
 

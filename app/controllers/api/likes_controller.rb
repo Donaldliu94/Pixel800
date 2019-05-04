@@ -33,8 +33,9 @@ class Api::LikesController < ApplicationController
         @like.user_id = current_user.id
         # @like = current_user.likes.new
         @like.post_id = params[:post_id]
+        # debugger
         if @like.save
-
+            @post = Post.find(@like.post_id)
             render :show
         else
             # debugger
@@ -45,12 +46,15 @@ class Api::LikesController < ApplicationController
 
 
     def destroy 
-        debugger
-        @like = Like.find(params[:id])
-        debugger
+        # debugger
+        @likes = Like.all.where(post_id: params[:id])
+        @like = @likes.find_by(user_id: current_user.id)
+
+        # @like = Like.find(params[:id])
+
+        # debugger
         if @like
             @like.destroy
-            render :show
         else
             render ["Could not find like"]
         end
