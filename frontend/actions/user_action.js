@@ -6,6 +6,7 @@ export const RECEIVE_ALL_USERS = "RECEIVE_ALL_USERS";
 
 
 const receiveAllUsers = (payload) => {
+    // debugger
     return({
         type: RECEIVE_ALL_USERS,
         users: payload.users,
@@ -16,6 +17,7 @@ const receiveAllUsers = (payload) => {
 
 
 export const fetchUsers = () => (dispatch) => {
+    // debugger
     return(
         APIUtil.fetchUsers().then( (users) => dispatch(receiveAllUsers(users)))
     );

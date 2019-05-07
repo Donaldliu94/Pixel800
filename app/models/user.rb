@@ -8,13 +8,25 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
 
 
-    has_many :followers,
-    class_name: :Follows,
+    has_many :follows_followers,
+    class_name: :Follow,
+    foreign_key: :followed_id
+
+    has_many :follows_followed,
+    class_name: :Follow,
     foreign_key: :follower_id
 
+    has_many :followers,
+    through: :follows_followers,
+    source: :follower
+
+
     has_many :followed,
-    class_name: :Follows,
-    foreign_key: :follower_id
+    through: :follows_followed,
+    source: :followed
+
+
+
 
 
     has_many :posts,

@@ -17,18 +17,22 @@ const receiveAllLikes = (likes) => {
 }
 
 const receiveLike = (payload) => {
-    // debugger
+
     return({
         type: RECEIVE_LIKE,
         like: payload.like,
-        post: payload.post
+        post: payload.post,
+        user: payload.user
     })
 }
 
-const removeLike = (id) => {
+const removeLike = (payload) => {
+
     return({
         type: REMOVE_LIKE,
-        likeId: id
+        like: payload.like,
+        post: payload.post,
+        user: payload.user
     })
 }
 
@@ -40,7 +44,7 @@ export const fetchLikes = () => (dispatch) => {
 }
 
 export const createLike = (like) => (dispatch) => {
-    // debugger
+
     return(
         APIUtil.createLike(like).then( (payload) => dispatch(receiveLike(payload)))
     );
@@ -50,6 +54,6 @@ export const createLike = (like) => (dispatch) => {
 
 export const deleteLike = (id) => (dispatch) => {
     return(
-        APIUtil.deleteLike(id).then( () => dispatch(removeLike(id)))
+        APIUtil.deleteLike(id).then( (payload) => dispatch(removeLike(payload)))                //if I didn't type anything in the payload and left it as () , empty, instead of (payload), it wouldn't show the payload 
     )
 }

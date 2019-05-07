@@ -175,6 +175,20 @@
     color: #B22E3B;
 }
 
+.unlike-heart{
+    color: #B22E3B;
+}
+
+
+.heart-count{
+    font-size: 20px;
+    color: rgb(34, 34, 34);
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+}
+
+
 .icon-comment {
     font-size: 28px;
     margin-left: 24px;

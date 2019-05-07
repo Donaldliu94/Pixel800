@@ -15,7 +15,6 @@ export default (state = {}, action) => {
         // debugger
             return action.posts;
         case RECEIVE_POST:
-        // debugger                 
             return merge({}, state, {[action.post.id]: action.post});
         case REMOVE_POST:
         // debugger
@@ -23,14 +22,14 @@ export default (state = {}, action) => {
             return newState;
 
 
-
         case RECEIVE_LIKE:
-            // debugger
             // newState[action.like.post_id].liker_ids.push({id: action.like.id, user: action.like.user_id})       //this accesses the specific post and then access the array in that post
             newState[action.post.id] = action.post
             return newState
         case REMOVE_LIKE:
-            delete newState[action.like.post_id].liker_ids[action.like.user_id]
+            //is it bad practice to do this?
+            delete newState[action.post.id]
+            newState[action.post.id] = action.post
             return newState;
         default:
             return state;

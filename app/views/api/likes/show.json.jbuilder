@@ -10,6 +10,10 @@
         json.photoUrl url_for(@post.photo)
     end
 
+    json.user do 
+        json.extract! @user, :id, :username, :like_ids
+    end
+
 
 
 # if i were to use like 3 and 5, I would have a like: { like: {user_id, post_id}}

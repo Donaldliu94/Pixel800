@@ -9,18 +9,34 @@ const PostIndexItem = ({photo, currentUser, deletePost, users, createLike, delet
 
 
 
-    // let userLikes = Object.values(likes).map( (like) => {
-    //     return like.user_id
-    // })    
+    // let userLikes = photo.like_ids.map( (like) => {
+    //     return likes[like].user_id
+    // })
 
-    let userLikes = photo.like_ids.map( (like) => {
-        return likes[like].user_id
+    let userLikes;
+    for(let i = 0; i < photo.like_ids.length; i++){
+        if (currentUser.like_ids.includes(photo.like_ids[i])){
+            userLikes = true
+            break;
+        } else{
+            userLikes = false
+        }
+    }
+
+    debugger
+
+    // let userDeleteId = photo.like_ids.map( (id) => {
+    //     if(currentUser.like_ids.includes(id)){
+    //         return id
+    //     }
+    // })
+
+    let userDeleteId = photo.like_ids.filter( (id) => {
+        if(currentUser.like_ids.includes(id)){
+            return id
+        }
     })
-    let likearray = []
-    Object.values(likes).forEach(element => {
-        likearray.push(element.id)
-    });
-
+    
 
     return(
         <>
@@ -33,13 +49,16 @@ const PostIndexItem = ({photo, currentUser, deletePost, users, createLike, delet
 
             <div className="PostIndexItem-photo-attributes">
                 <div className="icon-heart">
-                    { userLikes.includes(currentUser.id) ? 
-                        // <span onClick={() => console.log("hello")}><FontAwesomeIcon icon={['far', 'heart']} /></span> 
-                        <span onClick={() => deleteLike(photo.id)}><FontAwesomeIcon icon={['far', 'heart']} /></span> 
+                    { userLikes ? 
+                        // <span onClick={ () => deleteLike(userDeleteId[0])} className="unlike-heart"><FontAwesomeIcon icon={['far', 'heart']} /></span> 
+                        <span onClick={ () => deleteLike(userDeleteId[0])} className="unlike-heart"><FontAwesomeIcon icon={['fas', 'heart']} /></span> 
                         :
-                        <span onClick={ () => createLike(photo.id)}><FontAwesomeIcon icon={['far', 'heart']} /></span>
-                    }
-                        
+                        <span onClick={ () => createLike(photo.id)} className="liked-heart"><FontAwesomeIcon icon={['far', 'heart']} /></span>
+                    }  
+                </div>
+
+                <div className="heart-count">
+                    {photo.like_ids.length}
                 </div>
 
                 <div className="icon-comment">
@@ -58,7 +77,7 @@ const PostIndexItem = ({photo, currentUser, deletePost, users, createLike, delet
                 {photo.title}
             </div>
             <div className="PostIndexItem-photo-username">
-                    by {users[photo.photographer_id].username} • {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"][photo.created_at.slice(5, 7) - 1]  + " " + photo.created_at.slice(8, 10) + ", " + photo.created_at.slice(0, 4)}
+                    by {photo.postUsername} • {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"][photo.created_at.slice(5, 7) - 1]  + " " + photo.created_at.slice(8, 10) + ", " + photo.created_at.slice(0, 4)}
                     {/* if (currentUser.id === photo.photographer_id){
                         by {currentUser.username} • {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"][photo.created_at.slice(5, 7) - 1]  + " " + photo.created_at.slice(8, 10) + ", " + photo.created_at.slice(0, 4)}
                     } */}

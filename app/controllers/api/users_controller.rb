@@ -1,6 +1,13 @@
 class Api::UsersController < ApplicationController
 
 
+    def index 
+        @users = User.all.includes(:likes)
+        render :index
+    end
+
+
+
     def create
         # debugger
         @user = User.new(user_params)

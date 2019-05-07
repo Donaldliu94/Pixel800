@@ -3,8 +3,8 @@ class Api::PostsController < ApplicationController
 
     def index
         @posts = Post.with_attached_photo.all.includes(:user).includes(:likes)
-        @users = User.all
-        @likes = Like.all
+        # @users = User.all
+        # @likes = Like.all
 
         render :index
     end

@@ -22,7 +22,7 @@ class PostIndex extends React.Component {
     
 
     render(){
-        // debugger
+
         let leftArray = [];
         let rightArray = [];
         this.props.photos.forEach( (photo, idx) =>{

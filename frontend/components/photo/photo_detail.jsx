@@ -18,6 +18,7 @@ class PhotoDetail extends React.Component {
     }
     componentDidMount() {                                            //what was the point of this? is it needed?
         // debugger          
+        // this.props.fetchUsers().then( () => this.props.fetchPost(this.props.match.params.postId) )
         this.props.fetchPost(this.props.match.params.postId);
     }
 
@@ -48,6 +49,7 @@ class PhotoDetail extends React.Component {
         // let x = console.log(window.location.href);
         let createdAt = photo.created_at;
         let currentUser = this.props.currentUser;
+        let users = this.props.users;
         let deletePhoto = 
             <span onClick={() => {
                 this.props.deletePost(photo.id).then(() => this.props.history.push("/home"))
@@ -64,8 +66,8 @@ class PhotoDetail extends React.Component {
             deletePhoto = null;
         }
 
+        // debugger
         // if (this.props.match.path )
-
 
         // debugger
         // if (photo !== undefined) {
@@ -198,7 +200,8 @@ class PhotoDetail extends React.Component {
                                             </div>
                                             <div className="PostIndexItem-photo-username">
                                                 <div className="photo-detail">
-                                                    <div>by {currentUser.username} • 0 followers </div> 
+                                                        <div>by {photo.postUsername} • 0 followers </div> 
+                                                    {/* <div>by {users[photo.photographer_id].username} • 0 followers </div>  */}
                                                 </div>
                                             </div>
                                         </div>

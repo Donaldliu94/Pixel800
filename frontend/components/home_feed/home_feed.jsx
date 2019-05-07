@@ -15,6 +15,7 @@ class HomeFeed extends React.Component {
     
     
     render(){
+        // debugger
         let leftArray = [];
         let middleArray = [];
         let rightArray = [];
