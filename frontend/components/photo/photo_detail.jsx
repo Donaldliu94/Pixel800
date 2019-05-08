@@ -55,21 +55,34 @@ class PhotoDetail extends React.Component {
                 this.props.deletePost(photo.id).then(() => this.props.history.push("/home"))
             }}><FontAwesomeIcon icon={['fas', 'times']} /></span>
 
-
         let goBack = 
             <span onClick={() => {
                 this.props.history.goBack();
             }}><FontAwesomeIcon icon={['fas', 'times']} className="photo-detail-exit" /></span>
 
-
         if (this.props.photo.photographer_id !== this.props.currentUser.id){
             deletePhoto = null;
         }
 
-        // debugger
+
+        let userLikes;
+        for (let i = 0; i < photo.like_ids.length; i++) {
+            if (currentUser.like_ids.includes(photo.like_ids[i])) {
+                userLikes = true
+                break;
+            } else {
+                userLikes = false
+            }
+        }
+
+        let userDeleteId = photo.like_ids.filter((id) => {
+            if (currentUser.like_ids.includes(id)) {
+                return id
+            }
+        })
+
         // if (this.props.match.path )
 
-        // debugger
         // if (photo !== undefined) {
 
             return(
@@ -176,8 +189,21 @@ class PhotoDetail extends React.Component {
                                 <div className="post-detail-bottom-left">
                                 
                                     <div className="PostIndexItem-photo-attributes">
-                                        <div className="icon-heart">
+                                        {/* <div className="icon-heart">
                                             <FontAwesomeIcon icon={['far', 'heart']} />
+                                        </div> */}
+
+                                        <div className="icon-heart">
+                                            {userLikes ?
+                                                // <span onClick={ () => deleteLike(userDeleteId[0])} className="unlike-heart"><FontAwesomeIcon icon={['far', 'heart']} /></span> 
+                                                <span onClick={() => this.props.deleteLike(userDeleteId[0])} className="unlike-heart"><FontAwesomeIcon icon={['fas', 'heart']} /></span>
+                                                :
+                                                <span onClick={() => this.props.createLike(photo.id)} className="liked-heart"><FontAwesomeIcon icon={['far', 'heart']} /></span>
+                                            }
+                                        </div>
+
+                                        <div className="heart-count">
+                                            {photo.like_ids.length}
                                         </div>
 
                                         <div className="icon-comment">

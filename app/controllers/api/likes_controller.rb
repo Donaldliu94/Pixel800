@@ -56,7 +56,7 @@ class Api::LikesController < ApplicationController
         # debugger
         if @like
             @like.destroy
-            
+            #these are not n + 1 query because the user finding doesn't depend on the post finding, and vice versa
             @post = Post.find(@like.post_id)
             @user = User.find(@like.user_id)
             render :show           #do i have to render show when i destroy?

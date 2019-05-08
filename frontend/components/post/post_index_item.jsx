@@ -23,13 +23,6 @@ const PostIndexItem = ({photo, currentUser, deletePost, users, createLike, delet
         }
     }
 
-    debugger
-
-    // let userDeleteId = photo.like_ids.map( (id) => {
-    //     if(currentUser.like_ids.includes(id)){
-    //         return id
-    //     }
-    // })
 
     let userDeleteId = photo.like_ids.filter( (id) => {
         if(currentUser.like_ids.includes(id)){
