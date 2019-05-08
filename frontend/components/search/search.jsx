@@ -60,7 +60,7 @@ class Search extends React.Component {
             this.props.photos.forEach( (photo) => {
                 if (photo.title.includes(this.state.searchInput) ){
                     // this.setState({id: photo.id })
-                    debugger
+                    // debugger
                     matches.push({title: photo.title, id: photo.id } )
                 }
             });
