@@ -23,8 +23,8 @@ const usersReducer = (state = {}, action) => {
             return action.users;
 
         case RECEIVE_ALL_POSTS:
-        // debugger
-            return action.users;     //this was a big bug that I didn't figure out
+        debugger
+            return Object.assign({},state, action.users);     //this was a big bug that I didn't figure out
             // return Object.assign({}, state, action.users);
         
         case RECEIVE_LIKE:

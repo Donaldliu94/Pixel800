@@ -50,7 +50,8 @@ class Greeting extends React.Component {
 
     
     render() {
-
+            if(!this.props.currentUser.username) return null;
+            // debugger
             return <div className="profile-layout">
 
 
@@ -107,7 +108,6 @@ class Greeting extends React.Component {
                         
                         <div className="user-profile-name">
                                 {this.props.currentUser.username}
-                                {/* {this.props.currentUser ? this.props.currentUser.username: ""} */}
                             <div className="user-profile-name-content">
                                 <a href="#">My Profile</a>
                                 <a href="#">My Stats</a>
