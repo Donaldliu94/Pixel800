@@ -161,3 +161,20 @@
     align-items: center;
     transition-duration: 0.3s;
 }
+
+
+
+/* Photo Details Follows */
+
+.PostIndexItem-photo-username .photo-detail .follow{
+    color: #0970D0;
+}
+
+.PostIndexItem-photo-username .photo-detail .follow:hover{
+    color: #2A86F7;
+    cursor: pointer;
+}
+
+.PostIndexItem-photo-username .photo-detail .following:hover{
+    content: "Unfollow";
+}

@@ -13,7 +13,6 @@ export const fetchLikes = () => {
 
 
 export const createLike = (id) => {
-    // debugger
     return(
         $.ajax({
             method: "POST",
@@ -21,15 +20,16 @@ export const createLike = (id) => {
             data: {post_id: id}
         })
     );
-}
+};
 
 
 
 export const deleteLike = (id) => {
+    debugger
     return(
         $.ajax({
             method: "DELETE",
             url: `api/likes/${id}`
         })
-    )
-}
+    );
+};

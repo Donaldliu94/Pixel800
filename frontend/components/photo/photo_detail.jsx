@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import PostFormContainer from '../post/post_form_container';
 import Logo from '../../logo/navbar_logo';
+import Search from '../search/search'
 
 
 class PhotoDetail extends React.Component {
@@ -38,6 +39,20 @@ class PhotoDetail extends React.Component {
     // }
 
 
+    mouseOver() {
+        document.getElementById("followings").innerHTML = "Unfollow"
+        document.getElementById("followings").style.color = "blue";
+        
+    }
+
+    mouseLeave() {
+        document.getElementById("followings").innerHTML = "Following"        
+        document.getElementById("followings").style.color = "black"        
+
+    }
+
+
+
     render(){
         // debugger
         if (this.props.photo === undefined) return null;            //this is to fix the problem when you refresh from show page to show page
@@ -49,6 +64,7 @@ class PhotoDetail extends React.Component {
         // let x = console.log(window.location.href);
         let createdAt = photo.created_at;
         let currentUser = this.props.currentUser;
+        // debugger
         let users = this.props.users;
         let deletePhoto = 
             <span onClick={() => {
@@ -81,8 +97,26 @@ class PhotoDetail extends React.Component {
             }
         })
 
-        // if (this.props.match.path )
 
+        let userfollows;
+        if (currentUser.followed_ids.includes(photo.photographer_id)){
+            userfollows = true
+        } else {
+            userfollows = false
+        }
+
+
+        
+        let DeleteFollowId = currentUser.followed_ids.filter( (id) => {
+            if (photo.photographer_id === id){
+                return id
+            }
+        })
+        
+        debugger
+
+
+        // if (this.props.match.path )
         // if (photo !== undefined) {
 
             return(
@@ -118,8 +152,9 @@ class PhotoDetail extends React.Component {
                         <div className="user-nav-bar-right">
                             <form >
                                 <label className="search">
-                                    <FontAwesomeIcon icon={['fas', 'search']} />
-                                    <input placeholder="Search for photos, location, or people" ></input>
+                                    {/* <FontAwesomeIcon icon={['fas', 'search']} />
+                                    <input placeholder="Search for photos, location, or people" ></input> */}
+                                    <Search/>
                                 </label>
                             </form>
 
@@ -226,7 +261,11 @@ class PhotoDetail extends React.Component {
                                             </div>
                                             <div className="PostIndexItem-photo-username">
                                                 <div className="photo-detail">
-                                                        <div>by {photo.postUsername} • 0 followers </div> 
+                                                {userfollows ?
+                                                        <div>by {photo.postUsername} • <span onClick={() => this.props.deleteFollow(photo.photographer_id)} className="following" id="followings" onMouseOver={ () => this.mouseOver() } onMouseLeave={ () => this.mouseLeave() }>Following</span> </div> 
+                                                        :
+                                                        <div>by {photo.postUsername} • <span onClick={() => this.props.createFollow(photo.photographer_id)} className="follow">Follow</span> </div> 
+  }
                                                     {/* <div>by {users[photo.photographer_id].username} • 0 followers </div>  */}
                                                 </div>
                                             </div>

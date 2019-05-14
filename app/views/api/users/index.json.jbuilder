@@ -5,7 +5,7 @@
 json.users do
     @users.each do |user|
         json.set! user.id do
-            json.extract! user, :id, :username, :like_ids
+            json.extract! user, :id, :username, :like_ids, :follower_ids, :followed_ids
         end
     end
 end

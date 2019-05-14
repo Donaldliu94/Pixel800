@@ -98,7 +98,7 @@ class Search extends React.Component {
                 <input 
                 onChange={this.handleInput}
                 value={this.state.searchInput}
-                placeholder="Search for photos, location, or people "/>
+                placeholder="Search for photos by title"/>
                 <ul className="auto-list">
                     {results}
                 </ul>

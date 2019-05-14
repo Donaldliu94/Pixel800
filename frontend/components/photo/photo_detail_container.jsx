@@ -5,7 +5,7 @@ import {fetchPost, deletePost} from '../../actions/post_actions';
 import { openModal, closeModal } from '../../actions/modal_action';
 import { fetchUsers } from '../../actions/user_action';
 import { createLike, deleteLike } from '../../actions/like_action';
-
+import { createFollow, deleteFollow } from '../../actions/follow_action';
 
 
 
@@ -36,8 +36,11 @@ const mapDispatchToProps = (dispatch) => {
         deletePost: (id) => dispatch(deletePost(id)),
         logout: () => dispatch(logout()),
 
-        createLike: (user_id, photo_id) => dispatch(createLike(user_id, photo_id)),
-        deleteLike: (user_id) => dispatch(deleteLike(user_id))
+        createLike: (photo_id) => dispatch(createLike(photo_id)),
+        deleteLike: (user_id) => dispatch(deleteLike(user_id)),
+
+        createFollow: (user_id) => dispatch(createFollow(user_id)),
+        deleteFollow: (user_id) => dispatch(deleteFollow(user_id))
     };
 };
 
