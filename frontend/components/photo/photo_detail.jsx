@@ -68,7 +68,7 @@ class PhotoDetail extends React.Component {
         let deletePhoto = 
             <span onClick={() => {
                 this.props.deletePost(photo.id).then(() => this.props.history.push("/home"))
-            }}><FontAwesomeIcon icon={['fas', 'times']} /></span>
+            }}><FontAwesomeIcon icon={['far', 'trash-alt']} /></span>
 
         let goBack = 
             <span onClick={() => {
