@@ -115,7 +115,6 @@ class PhotoDetail extends React.Component {
                     <div>by {photo.postUsername} • <span onClick={() => this.props.createFollow(photo.photographer_id)} className="follow">Follow</span> </div>
         }
 
-        debugger
 
         
         

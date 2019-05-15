@@ -44,6 +44,7 @@ class PostIndex extends React.Component {
 
         });
 
+
         // debugger                //this debugger will let you see that initially there is no photos then you will be able to see the photos in an array
         return(
 
@@ -69,10 +70,10 @@ class PostIndex extends React.Component {
                             Photo Views
                         </div>
                         <div className="profile-followers">
-                            Followers
+                            {this.props.currentUser.follower_ids.length} Followers
                         </div>
                         <div className="profile-following">
-                            Following
+                            {this.props.currentUser.followed_ids.length} Following
                         </div>
                     </div>
                 </div> 
