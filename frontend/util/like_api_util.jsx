@@ -25,7 +25,6 @@ export const createLike = (id) => {
 
 
 export const deleteLike = (id) => {
-    debugger
     return(
         $.ajax({
             method: "DELETE",

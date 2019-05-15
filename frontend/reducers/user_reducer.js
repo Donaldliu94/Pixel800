@@ -12,7 +12,7 @@ const usersReducer = (state = {}, action) => {
     Object.freeze(state);
 
     let newState = merge({}, state);
-    
+
     switch (action.type) { 
 
         case RECEIVE_CURRENT_USER:
@@ -44,7 +44,8 @@ const usersReducer = (state = {}, action) => {
             newState[action.follow.follower_id].followed_ids.push(action.follow.followed_id);
             return newState;
         case REMOVE_FOLLOW:
-        debugger
+            let followedIds = newState[action.follow.follower_id].followed_ids
+            
             newState[action.follow.follower_id].followed_ids = newState[action.follow.follower_id].followed_ids.filter( (id) => {
                 if (id !== action.follow.followed_id){
                     return id

@@ -26,7 +26,6 @@ const receiveLike = (payload) => {
 };
 
 const removeLike = (payload) => {
-    debugger
     return({
         type: REMOVE_LIKE,
         like: payload.like,
@@ -52,7 +51,6 @@ export const createLike = (id) => (dispatch) => {
 
 
 export const deleteLike = (id) => (dispatch) => {
-    debugger
     return(
         APIUtil.deleteLike(id).then( (payload) => dispatch(removeLike(payload)))                //if I didn't type anything in the payload and left it as () , empty, instead of (payload), it wouldn't show the payload 
     );

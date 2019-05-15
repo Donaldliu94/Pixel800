@@ -17,7 +17,6 @@ const receiveFollow = (payload) => {
 
 
 const removeFollow = (payload) => {
-    debugger
     return({
         type: REMOVE_FOLLOW,
         follow: payload.follow,
@@ -34,7 +33,6 @@ export const createFollow = (id) => (dispatch) => {
 
 
 export const deleteFollow = (id) => (dispatch) => {
-    debugger
     return(
         APIUtil.deleteFollow(id).then( (payload) => dispatch(removeFollow(payload)))
     );

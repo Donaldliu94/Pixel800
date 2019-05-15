@@ -51,9 +51,7 @@ class Api::LikesController < ApplicationController
         # @likes = Like.all.where(post_id: params[:id])
         # @like = @likes.find_by(user_id: current_user.id)
         # @post = Post.find(params[:id])
-        debugger
         @like = Like.find(params[:id])
-        debugger
         if @like
             @like.destroy
             #these are not n + 1 query because the user finding doesn't depend on the post finding, and vice versa

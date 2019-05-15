@@ -175,6 +175,11 @@
     cursor: pointer;
 }
 
-.PostIndexItem-photo-username .photo-detail .following:hover{
+/* .PostIndexItem-photo-username .photo-detail .following:hover{
     content: "Unfollow";
+} */
+
+
+.ownPhotoFollow {
+    color: #6D7378;
 }

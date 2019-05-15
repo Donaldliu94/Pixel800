@@ -41,14 +41,13 @@ class PhotoDetail extends React.Component {
 
     mouseOver() {
         document.getElementById("followings").innerHTML = "Unfollow"
-        document.getElementById("followings").style.color = "blue";
-        
+        document.getElementById("followings").style.color = "#2986F7";
     }
 
     mouseLeave() {
         document.getElementById("followings").innerHTML = "Following"        
         document.getElementById("followings").style.color = "black"        
-
+        document.getElementById("followings").style.cursor = "pointer"
     }
 
 
@@ -91,12 +90,12 @@ class PhotoDetail extends React.Component {
             }
         }
 
+
         let userDeleteId = photo.like_ids.filter((id) => {
             if (currentUser.like_ids.includes(id)) {
                 return id
             }
         })
-
 
         let userfollows;
         if (currentUser.followed_ids.includes(photo.photographer_id)){
@@ -105,15 +104,21 @@ class PhotoDetail extends React.Component {
             userfollows = false
         }
 
+        let photoFollow;
+        if (photo.photographer_id === currentUser.id){ 
+            photoFollow = <div>by {photo.postUsername} • <span className="ownPhotoFollow"> {currentUser.follower_ids.length} followers</span></div> 
+        } else{
+            photoFollow = 
+                userfollows ?
+                    <div>by { photo.postUsername } • <span onClick={() => this.props.deleteFollow(photo.photographer_id)} className="following" id="followings" onMouseOver={() => this.mouseOver()} onMouseLeave={() => this.mouseLeave()}>Following</span> </div > 
+                    :
+                    <div>by {photo.postUsername} • <span onClick={() => this.props.createFollow(photo.photographer_id)} className="follow">Follow</span> </div>
+        }
+
+        debugger
 
         
-        let DeleteFollowId = currentUser.followed_ids.filter( (id) => {
-            if (photo.photographer_id === id){
-                return id
-            }
-        })
         
-        debugger
 
 
         // if (this.props.match.path )
@@ -261,12 +266,17 @@ class PhotoDetail extends React.Component {
                                             </div>
                                             <div className="PostIndexItem-photo-username">
                                                 <div className="photo-detail">
-                                                {userfollows ?
+                                                
+                                                {photoFollow}
+
+                                                {/* {userfollows ?
                                                         <div>by {photo.postUsername} • <span onClick={() => this.props.deleteFollow(photo.photographer_id)} className="following" id="followings" onMouseOver={ () => this.mouseOver() } onMouseLeave={ () => this.mouseLeave() }>Following</span> </div> 
                                                         :
                                                         <div>by {photo.postUsername} • <span onClick={() => this.props.createFollow(photo.photographer_id)} className="follow">Follow</span> </div> 
-  }
-                                                    {/* <div>by {users[photo.photographer_id].username} • 0 followers </div>  */}
+                                                } */}
+
+                                                    {/* <div>by {photo.postUsername} • {currentUser.follower_ids.length} followers </div>  */}
+
                                                 </div>
                                             </div>
                                         </div>

@@ -13,7 +13,7 @@
     end
 
     json.user do 
-        json.extract! @user, :id, :username, :like_ids
+        json.extract! @user, :id, :username, :like_ids,  :follower_ids, :followed_ids
     end
 
 
