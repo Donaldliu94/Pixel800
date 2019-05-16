@@ -103,7 +103,7 @@ class PostForm extends React.Component {
                 <div>
                     <form onSubmit={ () => this.handleSubmit}>      {/*this handlesubmit isn't needed */}
                         <label htmlFor="files" className="fake-upload-form-btn-1">Select Photos
-                            <input type="file" className="upload-form-btn" onChange={this.handleFile} id="files"/>
+                            <input type="file" className="upload-form-btn" onChange={this.handleFile} accept="image/x-png, image/jpeg, image/jpg" id="files"/>
                         </label>
                     </form>
                 </div>
