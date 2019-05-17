@@ -28,6 +28,9 @@ Pixel800 is a photography platform for professional and novice photographers tha
 
 - Users can discover other users' photos and like their photo and follow them as well.
 
+#### Code Snippet:
+<a href="https://imgur.com/A1W4tWw"><img src="https://i.imgur.com/A1W4tWw.png" title="source: imgur.com" /></a>
+
 ### Viewing Photo Details
 
 <a href="https://imgur.com/DIRljFU"><img src="https://i.imgur.com/DIRljFU.png" title="source: imgur.com" /></a>
@@ -37,6 +40,9 @@ Pixel800 is a photography platform for professional and novice photographers tha
 ### Dynamic Search Bar for photos
 
 <a href="https://imgur.com/lik0vOQ"><img src="https://i.imgur.com/lik0vOQ.png" title="source: imgur.com" /></a>
+
+#### Code Snippet:
+<a href="https://imgur.com/SjjnnIE"><img src="https://i.imgur.com/SjjnnIE.png" title="source: imgur.com" /></a>
 
 - Users can also search for any photo by their title and immediately view them.
 
