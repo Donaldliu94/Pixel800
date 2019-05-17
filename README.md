@@ -38,7 +38,21 @@ Pixel800 is a photography platform for professional and novice photographers tha
 - Users can discover other users' photos and like their photo and follow them as well.
 
 #### Code Snippet:
-<a href="https://imgur.com/A1W4tWw"><img src="https://i.imgur.com/A1W4tWw.png" title="source: imgur.com" /></a>
+```
+        let combineArray = [leftArray, middleArray, rightArray]
+        
+        let idx = 0; 
+        let i = 0;
+        while (idx < this.props.photos.length) {
+            const photo = this.props.photos[idx];
+            if (i === combineArray.length) {
+                i = 0;
+            }
+            combineArray[i].unshift((<PostIndexItem photo={photo} key={idx} currentUser={this.props.currentUser} deletePost={this.props.deletePost} users={this.props.users} createLike={this.props.createLike} deleteLike={this.props.deleteLike} likes={this.props.likes}/>));
+            i++;
+            idx++;
+        }
+```
 
 ### Viewing Photo Details
 
@@ -51,7 +65,29 @@ Pixel800 is a photography platform for professional and novice photographers tha
 <a href="https://imgur.com/lik0vOQ"><img src="https://i.imgur.com/lik0vOQ.png" title="source: imgur.com" /></a>
 
 #### Code Snippet:
-<a href="https://imgur.com/SjjnnIE"><img src="https://i.imgur.com/SjjnnIE.png" title="source: imgur.com" /></a>
+```
+    matches(){
+        const matches = [];
+        if (this.state.searchInput.length === 0){
+            return [];
+        }
+        if (this.props.photos){ 
+            this.props.photos.forEach( (photo) => {
+                if (photo.title.includes(this.state.searchInput) ){
+                    // this.setState({id: photo.id })
+                    matches.push({title: photo.title, id: photo.id } )
+                }
+            });
+
+
+            if (matches.length === 0) {
+                matches.push( {title: "Unable to find photo"});
+            }
+
+            return matches;
+        }
+    }
+```
 
 - Users can also search for any photo by their title and immediately view them.
 
