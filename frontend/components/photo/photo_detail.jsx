@@ -140,10 +140,10 @@ class PhotoDetail extends React.Component {
                             <div className="user-ellipsis">
                                 <FontAwesomeIcon icon={['fas', 'ellipsis-h']} />
                                 <div className="user-ellipsis-content">
-                                    <a href="http://donald-liu.me">Personal Site</a>
-                                    <a href="https://www.linkedin.com/in/donald-liu/">LinkedIn</a>
-                                    <a href="https://github.com/donaldliu94">GitHub</a>
-                                    <a href="https://angel.co/donald-liu-1">AngelList</a>
+                                    <a href="http://donald-liu.me" target="_blank">Personal Site</a>
+                                    <a href="https://www.linkedin.com/in/donald-liu/" target="_blank">LinkedIn</a>
+                                    <a href="https://github.com/donaldliu94" target="_blank">GitHub</a>
+                                    <a href="https://angel.co/donald-liu-1" target="_blank">AngelList</a>
                                     {/* <a href="#">Blog</a> */}
                                     {/* <a href="#">Licensing</a> */}
                                     {/* <a href="#">Studio</a> */}
