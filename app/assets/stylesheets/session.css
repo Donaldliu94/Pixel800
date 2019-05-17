@@ -112,27 +112,27 @@ label{
     color: #0099e5;
 }
 
-.nav-discover-logo{
+.nav-discover-logo .LinkedIn{ 
     margin-right: 8px;
     color: #71767a;
 }
-.nav-discover-logo:hover{
+.nav-discover-logo .LinkedIn:hover{
     color: #0099e5;
 }
 
-.nav-about-logo{
+.nav-about-logo .GitHub{
     margin-right: 8px;
     color: #71767a;
 }
-.nav-about-logo:hover{
+.nav-about-logo .GitHub:hover{
     color: #0099e5;
 }
 
-.nav-studio-logo{
+.nav-studio-logo .AngelList{
     margin-right: 8px;
     color: #71767a;
 }
-.nav-studio-logo:hover{
+.nav-studio-logo .AngelList:hover{
     color: #0099e5;
 }
 

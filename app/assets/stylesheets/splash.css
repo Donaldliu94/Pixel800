@@ -38,9 +38,9 @@
     color:white;
 }
 
-.login-nav-bar-left div{
-    padding-right: 30px;
-}
+.login-nav-bar-left div a{ padding-right: 30px; color: white }
+
+.login-nav-bar-left div a:hover{ color: #0099e5 }
 
 
 .login-nav-bar-left{

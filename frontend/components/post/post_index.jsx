@@ -63,12 +63,12 @@ class PostIndex extends React.Component {
                     </div>
 
                     <div className="profile-user-detail-sub">
-                        <div className="profile-affection">
+                        {/* <div className="profile-affection">
                             Affection
                         </div>
                         <div className="profile-photoviews">
                             Photo Views
-                        </div>
+                        </div> */}
                         <div className="profile-followers">
                             {this.props.currentUser.follower_ids.length} Followers
                         </div>
@@ -79,7 +79,7 @@ class PostIndex extends React.Component {
                 </div> 
 
 
-                <div className="profile-sub-categories">
+                {/* <div className="profile-sub-categories">
                     <div className="sub-categories-photos">
                         PHOTOS
                     </div>
@@ -92,7 +92,7 @@ class PostIndex extends React.Component {
                     <div className="sub-categories-about">
                         ABOUT
                     </div>
-                </div>
+                </div> */}
 
 
                 <div className="list-of-photos">

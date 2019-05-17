@@ -140,15 +140,15 @@ class PhotoDetail extends React.Component {
                             <div className="user-ellipsis">
                                 <FontAwesomeIcon icon={['fas', 'ellipsis-h']} />
                                 <div className="user-ellipsis-content">
-                                    <a href="#">About</a>
-                                    <a href="#">App</a>
-                                    <a href="#">Groups</a>
-                                    <a href="#">Quests</a>
-                                    <a href="#">Blog</a>
-                                    <a href="#">Licensing</a>
-                                    <a href="#">Studio</a>
-                                    <a href="#">Terms</a>
-                                    <a href="#">Privacy</a>
+                                    <a href="http://donald-liu.me">Personal Site</a>
+                                    <a href="https://www.linkedin.com/in/donald-liu/">LinkedIn</a>
+                                    <a href="https://github.com/donaldliu94">GitHub</a>
+                                    <a href="https://angel.co/donald-liu-1">AngelList</a>
+                                    {/* <a href="#">Blog</a> */}
+                                    {/* <a href="#">Licensing</a> */}
+                                    {/* <a href="#">Studio</a> */}
+                                    {/* <a href="#">Terms</a> */}
+                                    {/* <a href="#">Privacy</a> */}
                                 </div>
                             </div>
                         </div>
@@ -166,12 +166,12 @@ class PhotoDetail extends React.Component {
                                 <FontAwesomeIcon icon={['fas', 'user-circle']} />
                                 <div className="icon-user-circle-content">
                                     <a href="#">My Profile</a>
-                                    <a href="#">My Stats</a>
+                                    {/* <a href="#">My Stats</a>
                                     <a href="#">My Galleries</a>
                                     <a href="#">My Liked Photos</a>
                                     <a href="#">My Setting</a>
                                     <a href="#">Managed Photos</a>
-                                    <a href="#">Support</a>
+                                    <a href="#">Support</a> */}
                                     <Link to="/" onClick={() => this.props.logout()}>Logout</Link>
                                 </div>
                             </div>
@@ -180,22 +180,22 @@ class PhotoDetail extends React.Component {
                                 {this.props.currentUser.username}
                                 <div className="user-profile-name-content">
                                     <a href="#">My Profile</a>
-                                    <a href="#">My Stats</a>
+                                    {/* <a href="#">My Stats</a>
                                     <a href="#">My Galleries</a>
                                     <a href="#">My Liked Photos</a>
                                     <a href="#">My Setting</a>
                                     <a href="#">Managed Photos</a>
-                                    <a href="#">Support</a>
+                                    <a href="#">Support</a> */}
                                     <Link to="/" onClick={() => this.props.logout()}>Logout</Link>
                                 </div>
                             </div>
 
                             <div className="icon-telegram-plane">
-                                <FontAwesomeIcon icon={['fab', 'telegram-plane']} />
+                                {/* <FontAwesomeIcon icon={['fab', 'telegram-plane']} /> */}
                             </div>
 
                             <div className="icon-bell">
-                                <FontAwesomeIcon icon={['fas', 'bell']} />
+                                {/* <FontAwesomeIcon icon={['fas', 'bell']} /> */}
                             </div>
 
                             <div className="icon-plus-sign">
@@ -245,17 +245,19 @@ class PhotoDetail extends React.Component {
                                             {photo.like_ids.length}
                                         </div>
 
+                                        <div className="icon-times-symbol">
+                                            {deletePhoto}
+                                        </div>
+
                                         <div className="icon-comment">
-                                            <FontAwesomeIcon icon={['far', 'comment']} />
+                                            {/* <FontAwesomeIcon icon={['far', 'comment']} /> */}
                                         </div>
 
                                         <div className="icon-plus-square">
-                                            <FontAwesomeIcon icon={['far', 'plus-square']} />
+                                            {/* <FontAwesomeIcon icon={['far', 'plus-square']} /> */}
                                         </div>
 
-                                        <div className="icon-times-symbol">
-                                                {deletePhoto}
-                                        </div>
+                                        
                                     </div>
 
                                     <div className="photo-detail-topline">
@@ -317,14 +319,14 @@ class PhotoDetail extends React.Component {
 
                                 </div>
 
-
+{/* 
                                 <div className="post-detail-bottom-right">
                                     <div className="photo-detail-comment-number">0 Comments</div>
                                     <div className="photo-detail-adding-comment">
                                         <div className="photo-detail-add-comment-user-icon"><FontAwesomeIcon icon={['fas', 'user-circle']} /></div>
                                         <div className="outer-add-comment-box"><input placeholder="Add a comment" className="inner-add-comment-box"></input></div>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
 
 

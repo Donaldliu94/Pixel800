@@ -109,13 +109,13 @@ class SessionForm extends React.Component {
                                 <a href="/"><Logo/></a>
                             </div>
                             <div className="nav-discover-logo">
-                                Discover
+                                <a href="https://www.linkedin.com/in/donald-liu/" className="LinkedIn" target="_blank">LinkedIn</a>
                             </div>
                             <div className="nav-about-logo">
-                                About
+                                <a href="https://github.com/Donaldliu94" className="GitHub" target="_blank">GitHub</a>
                             </div>
                             <div className="nav-studio-logo">
-                                Studio
+                                <a href="https://angel.co/donald-liu-1" className="AngelList" target="_blank">AngelList</a>
                             </div>
                         </div>
 

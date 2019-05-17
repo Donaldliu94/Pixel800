@@ -36,13 +36,13 @@ class Splash extends React.Component {
                                 {/* <Link to="/login" className="fp-logo-link"><img className="fp-logo" src={window.logo} alt="pixel800 image"/></Link> */}
                             </div>
                             <div>
-                                Discover
+                                <a href="https://www.linkedin.com/in/donald-liu" target="_blank">LinkedIn</a>
                             </div>
                             <div>
-                                About
+                                <a href="https://github.com/Donaldliu94" target="_blank">GitHub</a>
                             </div>
                             <div>
-                                Studio
+                                <a href="https://angel.co/donald-liu-1" target="_blank">AngelList</a>
                             </div>
                         </div>
 

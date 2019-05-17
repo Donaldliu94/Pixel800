@@ -55,11 +55,11 @@ const PostIndexItem = ({photo, currentUser, deletePost, users, createLike, delet
                 </div>
 
                 <div className="icon-comment">
-                    <FontAwesomeIcon icon={['far', 'comment']} />
+                    {/* <FontAwesomeIcon icon={['far', 'comment']} /> */}
                 </div>
 
                 <div className="icon-plus-square">
-                    <FontAwesomeIcon icon={['far', 'plus-square']} />
+                    {/* <FontAwesomeIcon icon={['far', 'plus-square']} /> */}
                 </div>
 
                 {/* <div className="icon-times-symbol">
