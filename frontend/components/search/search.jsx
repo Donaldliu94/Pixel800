@@ -51,7 +51,6 @@ class Search extends React.Component {
     }
 
     matches(){
-        // debugger
         const matches = [];
         if (this.state.searchInput.length === 0){
             return [];
@@ -60,7 +59,6 @@ class Search extends React.Component {
             this.props.photos.forEach( (photo) => {
                 if (photo.title.includes(this.state.searchInput) ){
                     // this.setState({id: photo.id })
-                    // debugger
                     matches.push({title: photo.title, id: photo.id } )
                 }
             });

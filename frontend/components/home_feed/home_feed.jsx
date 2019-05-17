@@ -15,12 +15,10 @@ class HomeFeed extends React.Component {
     
     
     render(){
-        // debugger
         let leftArray = [];
         let middleArray = [];
         let rightArray = [];
         let combineArray = [leftArray, middleArray, rightArray]
-        // debugger
         
         let idx = 0; 
         let i = 0;

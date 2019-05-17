@@ -290,7 +290,7 @@ class PhotoDetail extends React.Component {
                                     </div>
 
 
-                                    <div className="Pulse-Views-Popular">
+                                    {/* <div className="Pulse-Views-Popular">
                                         <div className="Pulse">
                                             <div className="PVP-word">Pulse</div>
                                             <div className="PVP-number">99.9</div>
@@ -314,7 +314,7 @@ class PhotoDetail extends React.Component {
 
                                     <div className="post-detail-category">
                                         <div>Category Uncategorized</div>
-                                    </div>
+                                    </div> */}
 
 
                                 </div>
