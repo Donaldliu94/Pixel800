@@ -20,7 +20,16 @@ Pixel800 is a photography platform for professional and novice photographers tha
 - Users can upload images by selecting them from the file explorer which would bring them the upload form.
 
 #### Code Snippet:
-<a href="https://imgur.com/WYYmDtN"><img src="https://i.imgur.com/WYYmDtN.png" title="source: imgur.com" /></a>
+```   <div className="uploading-picture-form2">
+                <div>
+                    <form onSubmit={ () => this.handleSubmit}>      
+                        <label htmlFor="files" className="fake-upload-form-btn-1">Select Photos
+                            <input type="file" className="upload-form-btn" onChange={this.handleFile} accept="image/x-png, image/jpeg, image/jpg" id="files"/>
+                        </label>
+                    </form>
+                </div>
+            </div>
+```
 
 ### Dynamic Photo Gallery 
 
