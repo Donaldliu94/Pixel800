@@ -15,14 +15,30 @@ Pixel800 is a photography platform for professional and novice photographers tha
 ### Photo Uploads 
 
 <a href="https://imgur.com/rkRgjYt"><img src="https://i.imgur.com/rkRgjYt.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/3ANGBCs"><img src="https://i.imgur.com/3ANGBCs.png" title="source: imgur.com" /></a>
 
-- User can upload images by selecting them from the file explorer which would bring them the upload form.
+- Users can upload images by selecting them from the file explorer which would bring them the upload form.
 
+#### Code Snippet:
+<a href="https://imgur.com/WYYmDtN"><img src="https://i.imgur.com/WYYmDtN.png" title="source: imgur.com" /></a>
 
 ### Dynamic Photo Gallery 
 
 <a href="https://imgur.com/dYfbQN6"><img src="https://i.imgur.com/dYfbQN6.png" title="source: imgur.com" /></a>
 
+- Users can discover other users' photos and like their photo and follow them as well.
+
+### Viewing Photo Details
+
+<a href="https://imgur.com/DIRljFU"><img src="https://i.imgur.com/DIRljFU.png" title="source: imgur.com" /></a>
+
+- Users can click on any photo and see more specifications about the photos up close! 
+
+### Dynamic Search Bar for photos
+
+<a href="https://imgur.com/lik0vOQ"><img src="https://i.imgur.com/lik0vOQ.png" title="source: imgur.com" /></a>
+
+- Users can also search for any photo by their title and immediately view them.
 
 ## Product Design
   The reason for integrating Rails for the application was because of its built-in-support of relational databases and RESTFUL architecture. Due to the fact that this project was a small scale portfolio piece with a limited completion time, convenience and speed were given more priority over scalability. The technologies such as Rails, AWS, S3 Heroku, etc. are sufficient for the anticipated load.
