@@ -32,8 +32,6 @@ class HomeFeed extends React.Component {
             idx++;
         }
 
-
-        //keith 
         // const left = [];
         // const mid = [];
         // const right = [];

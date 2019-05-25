@@ -5,9 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 class PostForm extends React.Component {
 
     constructor(props) {
-        // debugger
+
         super(props)
-        // debugger
+
         this.state = {
             title: "",
             description: "",
@@ -67,7 +67,7 @@ class PostForm extends React.Component {
     // 
     render() {
         // this.state.uploaded ? 
-        // debugger
+
         return this.state.uploaded ?  
             <div className="uploading-picture-form1">
 

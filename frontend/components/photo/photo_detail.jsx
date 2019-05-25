@@ -18,7 +18,6 @@ class PhotoDetail extends React.Component {
         // this.fromHome = true
     }
     componentDidMount() {                                            //what was the point of this? is it needed?
-        // debugger          
         // this.props.fetchUsers().then( () => this.props.fetchPost(this.props.match.params.postId) )
         this.props.fetchPost(this.props.match.params.postId);
     }
@@ -31,7 +30,6 @@ class PhotoDetail extends React.Component {
     //     }
 
     // }
-
 
     // componentWillReceiveProps(nextProps) {
     //     console.log(nextProps)
@@ -115,9 +113,6 @@ class PhotoDetail extends React.Component {
                     <div>by {photo.postUsername} • <span onClick={() => this.props.createFollow(photo.photographer_id)} className="follow">Follow</span> </div>
         }
 
-
-        
-        
 
 
         // if (this.props.match.path )
@@ -290,10 +285,10 @@ class PhotoDetail extends React.Component {
                                     </div>
 
 
-                                    {/* <div className="Pulse-Views-Popular">
+                                    <div className="Pulse-Views-Popular">
                                         <div className="Pulse">
                                             <div className="PVP-word">Pulse</div>
-                                            <div className="PVP-number">99.9</div>
+                                            <div className="PVP-number">{photo.like_ids.length * 8.8}</div>
                                         </div>
                                         <div className="Views">
                                             <div className="PVP-word">Views</div>
@@ -311,7 +306,7 @@ class PhotoDetail extends React.Component {
                                         <div className="camera-specs-aperture"><FontAwesomeIcon icon={['fas', 'bolt']}/> 14.0-24.0 mm f/2.8</div>
                                         <FontAwesomeIcon icon={['fas', 'sliders-h']} />  &nbsp; 21mm ƒ/16 1s ISO 100
                                     </div>
-
+{/* 
                                     <div className="post-detail-category">
                                         <div>Category Uncategorized</div>
                                     </div> */}

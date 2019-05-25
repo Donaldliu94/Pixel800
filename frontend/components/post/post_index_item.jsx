@@ -16,10 +16,10 @@ const PostIndexItem = ({photo, currentUser, deletePost, users, createLike, delet
     let userLikes;
     for(let i = 0; i < photo.like_ids.length; i++){
         if (currentUser.like_ids.includes(photo.like_ids[i])){
-            userLikes = true
+            userLikes = true;
             break;
         } else{
-            userLikes = false
+            userLikes = false;
         }
     }
 
