@@ -27,9 +27,7 @@ class Api::LikesController < ApplicationController
 
 
     def create 
-        # debugger
         @like = Like.new
-        # debugger
         @like.user_id = current_user.id
         # @like = current_user.likes.new
         @like.post_id = params[:post_id]
@@ -39,7 +37,6 @@ class Api::LikesController < ApplicationController
 
             render :show
         else
-            # debugger
             render json: @like.errors.full_messages, status: 422
         end
     end

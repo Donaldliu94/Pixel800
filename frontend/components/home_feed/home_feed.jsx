@@ -25,7 +25,7 @@ class HomeFeed extends React.Component {
         let i = 0;
         while (idx < this.props.photos.length) {
             const photo = this.props.photos[idx];
-            debugger
+            // debugger
             if (i === combineArray.length) {
                 i = 0;
             }

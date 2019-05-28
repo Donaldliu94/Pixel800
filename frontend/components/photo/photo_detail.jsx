@@ -20,9 +20,10 @@ class PhotoDetail extends React.Component {
     }
     componentDidMount() {                                            //what was the point of this? is it needed?
         // this.props.fetchUsers().then( () => this.props.fetchPost(this.props.match.params.postId) )
+        const that = this;
         this.props.fetchPost(this.props.match.params.postId).then( (result) => {
             result.post.view = result.post.view + 1;
-            this.props.updatePost(result);
+            that.props.updatePost(result);
         });
     }
 
@@ -293,7 +294,7 @@ class PhotoDetail extends React.Component {
                                     <div className="Pulse-Views-Popular">
                                         <div className="Pulse">
                                             <div className="PVP-word">Pulse</div>
-                                            <div className="PVP-number">{parseFloat((photo.like_ids.length * 8.8 + (views * 0.8)).toFixed(1))}</div>
+                                            <div className="PVP-number">{parseFloat((photo.like_ids.length * 8.8 + (views * 0.8) + 4.4).toFixed(1))}</div>
                                         </div>
                                         <div className="Views">
                                             <div className="PVP-word">Views</div>
