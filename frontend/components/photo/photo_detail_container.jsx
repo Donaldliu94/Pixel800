@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import PhotoDetail from './photo_detail';
 import { logout } from '../../actions/session_actions';
-import {fetchPost, deletePost} from '../../actions/post_actions';
+import {fetchPost, deletePost, updatePost} from '../../actions/post_actions';
 import { openModal, closeModal } from '../../actions/modal_action';
 import { fetchUsers } from '../../actions/user_action';
 import { createLike, deleteLike } from '../../actions/like_action';
@@ -40,7 +40,10 @@ const mapDispatchToProps = (dispatch) => {
         deleteLike: (user_id) => dispatch(deleteLike(user_id)),
 
         createFollow: (user_id) => dispatch(createFollow(user_id)),
-        deleteFollow: (user_id) => dispatch(deleteFollow(user_id))
+        deleteFollow: (user_id) => dispatch(deleteFollow(user_id)),
+
+
+        updatePost: (post) => dispatch(updatePost(post)),
     };
 };
 

@@ -25,7 +25,7 @@ const mapDispatchToProps = (dispatch) => {
         createLike: (user_id, photo_id) => dispatch(createLike(user_id, photo_id)),
         deleteLike: (user_id) => dispatch(deleteLike(user_id)),
 
-        updateView: (photo_id, view_amount) => dispatch()
+        updateView: (post) => dispatch(updatePost(post))
     });
 };
 

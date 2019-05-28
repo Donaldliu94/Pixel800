@@ -20,7 +20,10 @@ class PhotoDetail extends React.Component {
     }
     componentDidMount() {                                            //what was the point of this? is it needed?
         // this.props.fetchUsers().then( () => this.props.fetchPost(this.props.match.params.postId) )
-        this.props.fetchPost(this.props.match.params.postId);
+        this.props.fetchPost(this.props.match.params.postId).then( (result) => {
+            result.post.view = result.post.view + 1;
+            this.props.updatePost(result);
+        });
     }
 
     // componentDidUpdate(prevProps) {
@@ -56,7 +59,7 @@ class PhotoDetail extends React.Component {
         if (this.props.photo === undefined) return null;            //this is to fix the problem when you refresh from show page to show page
         let photo = this.props.photo;
         let views = this.props.photo.view;
-        // debugger
+        debugger
         let title = photo.title;
         let photoUrl = photo.photoUrl;
         // debugger
@@ -290,7 +293,7 @@ class PhotoDetail extends React.Component {
                                     <div className="Pulse-Views-Popular">
                                         <div className="Pulse">
                                             <div className="PVP-word">Pulse</div>
-                                            <div className="PVP-number">{parseFloat((photo.like_ids.length * 8.8).toFixed(1))}</div>
+                                            <div className="PVP-number">{parseFloat((photo.like_ids.length * 8.8 + (views * 0.8)).toFixed(1))}</div>
                                         </div>
                                         <div className="Views">
                                             <div className="PVP-word">Views</div>

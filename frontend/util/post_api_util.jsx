@@ -50,12 +50,12 @@ export const deletePost = (id) => {
 
 
 
-export const patchPost = (id, view) => {
+export const patchPost = (post) => {
     return(
         $.ajax({
             method: "PATCH",
-            url: `api/posts/${id}`,
-            data: {view},
+            url: `api/posts/${post.id}`,
+            data: post,
         })
     );
 };

@@ -38,7 +38,7 @@ class HomeFeed extends React.Component {
                 createLike={this.props.createLike} 
                 deleteLike={this.props.deleteLike} 
                 likes={this.props.likes} 
-                onClick={() => {this.props.updateView(photo.id, 1)}}          //can i just pass in idx to here?
+                // onClick={() => {this.props.updateView(photo)}}          //can i just pass in idx to here?
                 />));
             i++;
             idx++;

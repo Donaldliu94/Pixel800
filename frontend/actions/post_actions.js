@@ -47,7 +47,7 @@ export const clearPostErrors = () => {
 
 export const patchPost = (post) => {
     return({
-        type: PATCH_POST,
+        type: RECEIVE_POST,
         post: post
     })
 }

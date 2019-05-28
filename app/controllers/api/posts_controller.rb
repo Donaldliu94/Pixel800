@@ -11,6 +11,7 @@ class Api::PostsController < ApplicationController
 
 
     def show
+        #increment post.view here in future, it removes work from frontend
         @post = Post.find(params[:id]) 
         render :show
     end
@@ -27,9 +28,8 @@ class Api::PostsController < ApplicationController
 
 
     def update
-        @post = Post.find(params[:id])
-        if @post
-            @post.update(view: params[:view])
+        @post = Post.find(params[:post][:id])
+            if @post.update(post_params)
             render :show
         end
     end
