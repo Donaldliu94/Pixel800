@@ -24,7 +24,6 @@ const logoutCurrentUser = () => {
 
 
 const receiveErrors = (errors) => {
-    // debugger
     return({
         type: RECEIVE_SESSION_ERRORS,
         errors: errors
@@ -40,7 +39,6 @@ export const clearSessionErrors = () => {
 
 
 export const signup = (user) => (dispatch) => {
-    // debugger
     return(
         APIUtil.signup(user).then( (currentUser) => dispatch(receiveCurrentUser(currentUser)), error => dispatch(receiveErrors(error.responseJSON)))
     );
@@ -49,7 +47,6 @@ export const signup = (user) => (dispatch) => {
 
 
 export const login = (user) => (dispatch) => {
-    // debugger
     return(
         APIUtil.login(user).then((user) => dispatch(receiveCurrentUser(user)), error => dispatch(receiveErrors(error.responseJSON)))
     );

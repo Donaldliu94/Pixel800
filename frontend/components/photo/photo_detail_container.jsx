@@ -11,7 +11,6 @@ import { createFollow, deleteFollow } from '../../actions/follow_action';
 
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
     const photo_object = state.entities.posts[ownProps.match.params.postId]
     //  || {};
 

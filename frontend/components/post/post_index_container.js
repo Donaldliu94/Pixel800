@@ -6,7 +6,6 @@ import { createLike, deleteLike } from '../../actions/like_action'
 
 
 const mapStateToProps = (state) => {
-    // debugger
     return {
         users: state.entities.users,
         currentUser: state.entities.users[state.session.id],
@@ -17,7 +16,6 @@ const mapStateToProps = (state) => {
 
 
 const mapDispatchToProps = (dispatch) => {
-    // debugger
     return ({
         fetchPosts: () => dispatch(fetchPosts()),
         deletePost: (id) => dispatch(deletePost(id)),

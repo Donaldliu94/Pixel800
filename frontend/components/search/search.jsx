@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const msp = (state) => {
-    // debugger
     return({
         posts: state.entities.posts,
         photos: Object.values(state.entities.posts) 
@@ -17,7 +16,6 @@ const msp = (state) => {
 
 
 const mdp = (dispatch) => {
-    // debugger
     return({
         fetchPosts: () => dispatch(fetchPosts())
     })
@@ -40,7 +38,6 @@ class Search extends React.Component {
 
 
     componentDidMount(){
-        // debugger
         // this.props.fetchPosts();
     }
 
@@ -74,7 +71,6 @@ class Search extends React.Component {
 
     selectName(event){
         // const name = event.currentTarget.innerText;
-        // debugger
         const resultId = parseInt(event.target.value)
         this.setState( {searchInput: "" });
         this.props.history.push(`/pictures/${resultId}`)
@@ -82,9 +78,7 @@ class Search extends React.Component {
     
 
     render() {
-        // debugger
         const results = this.matches().map( (result, i) => {
-            // debugger
             return (
                 <li key={i} value={result.id} onClick={this.selectName}>{result.title}</li>
             )

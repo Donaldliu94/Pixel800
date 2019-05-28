@@ -44,7 +44,6 @@ class Api::LikesController < ApplicationController
 
 
     def destroy 
-        # debugger
         # @likes = Like.all.where(post_id: params[:id])
         # @like = @likes.find_by(user_id: current_user.id)
         # @post = Post.find(params[:id])

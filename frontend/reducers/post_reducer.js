@@ -8,16 +8,13 @@ export default (state = {}, action) => {
     Object.freeze(state);
     
     const newState = merge({}, state);
-    // debugger
 
     switch(action.type){
         case RECEIVE_ALL_POSTS:
-        // debugger
             return action.posts;
         case RECEIVE_POST:
             return merge({}, state, {[action.post.id]: action.post});
         case REMOVE_POST:
-        // debugger
             delete newState[action.postId];
             return newState;
 

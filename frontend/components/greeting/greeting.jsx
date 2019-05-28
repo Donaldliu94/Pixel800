@@ -52,7 +52,6 @@ class Greeting extends React.Component {
     
     render() {
             if(!this.props.currentUser.username) return null;
-            // debugger
             return <div className="profile-layout">
 
 

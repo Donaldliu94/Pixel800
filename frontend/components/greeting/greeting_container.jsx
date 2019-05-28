@@ -6,7 +6,6 @@ import { openModal, closeModal } from '../../actions/modal_action';
 
 
 const mapStateToProps = (state) => {
-    // debugger
     return {
         currentUser: state.entities.users[state.session.id],
         modalState: state.ui.modal

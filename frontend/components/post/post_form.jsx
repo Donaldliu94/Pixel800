@@ -34,11 +34,9 @@ class PostForm extends React.Component {
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
-            // debugger
             this.setState({ photoFile: file, photoUrl: fileReader.result, uploaded: true});     // you want to put uploaded:true here because if you put that code below, once you upload photo it would re-render and then jump to the render code below, and therefore you wouldn't hit this line, and don't have access to photoUrl.
         };
         if (file) {             //when the file gets uploaded, the file becomes true and will call the fileReader.onloadened
-            // debugger
             fileReader.readAsDataURL(file);
         }
     }

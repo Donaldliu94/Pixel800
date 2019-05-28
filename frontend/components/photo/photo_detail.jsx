@@ -28,7 +28,6 @@ class PhotoDetail extends React.Component {
     }
 
     // componentDidUpdate(prevProps) {
-    //     // debugger
     //     if (prevProps.match.path !== "/home") {
     //         this.fromHome = false;
     //         console.log(this.fromHome)
@@ -38,7 +37,6 @@ class PhotoDetail extends React.Component {
 
     // componentWillReceiveProps(nextProps) {
     //     console.log(nextProps)
-    //     // debugger
     // }
 
 
@@ -56,18 +54,14 @@ class PhotoDetail extends React.Component {
 
 
     render(){
-        // debugger
         if (this.props.photo === undefined) return null;            //this is to fix the problem when you refresh from show page to show page
         let photo = this.props.photo;
         let views = this.props.photo.view;
-        debugger
         let title = photo.title;
         let photoUrl = photo.photoUrl;
-        // debugger
         // let x = console.log(window.location.href);
         let createdAt = photo.created_at;
         let currentUser = this.props.currentUser;
-        // debugger
         let users = this.props.users;
         let deletePhoto = 
             <span onClick={() => {
