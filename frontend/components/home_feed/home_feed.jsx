@@ -13,8 +13,9 @@ class HomeFeed extends React.Component {
         this.props.fetchPosts();
     }
     
-    
+
     render(){
+        // debugger
         let leftArray = [];
         let middleArray = [];
         let rightArray = [];
@@ -24,10 +25,21 @@ class HomeFeed extends React.Component {
         let i = 0;
         while (idx < this.props.photos.length) {
             const photo = this.props.photos[idx];
+            debugger
             if (i === combineArray.length) {
                 i = 0;
             }
-            combineArray[i].unshift((<PostIndexItem photo={photo} key={idx} currentUser={this.props.currentUser} deletePost={this.props.deletePost} users={this.props.users} createLike={this.props.createLike} deleteLike={this.props.deleteLike} likes={this.props.likes}/>));
+            combineArray[i].unshift((<PostIndexItem 
+                photo={photo} 
+                key={idx} 
+                currentUser={this.props.currentUser} 
+                deletePost={this.props.deletePost} 
+                users={this.props.users} 
+                createLike={this.props.createLike} 
+                deleteLike={this.props.deleteLike} 
+                likes={this.props.likes} 
+                onClick={() => {this.props.updateView(photo.id, 1)}}          //can i just pass in idx to here?
+                />));
             i++;
             idx++;
         }

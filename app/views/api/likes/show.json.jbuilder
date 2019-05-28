@@ -6,7 +6,7 @@
     end
     # end
     json.post do
-        json.extract! @post, :id, :title, :description, :created_at, :photographer_id, :like_ids
+        json.extract! @post, :id, :title, :description, :created_at, :photographer_id, :like_ids, :view
         json.photoUrl url_for(@post.photo)
         json.postUsername @post.user.username
 

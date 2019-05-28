@@ -14,6 +14,7 @@ class PhotoDetail extends React.Component {
             title: "",
             description: "",
             photoFile: null,
+            // view: 0,
         };
         // this.fromHome = true
     }
@@ -54,6 +55,7 @@ class PhotoDetail extends React.Component {
         // debugger
         if (this.props.photo === undefined) return null;            //this is to fix the problem when you refresh from show page to show page
         let photo = this.props.photo;
+        let views = this.props.photo.view;
         // debugger
         let title = photo.title;
         let photoUrl = photo.photoUrl;
@@ -288,11 +290,11 @@ class PhotoDetail extends React.Component {
                                     <div className="Pulse-Views-Popular">
                                         <div className="Pulse">
                                             <div className="PVP-word">Pulse</div>
-                                            <div className="PVP-number">{photo.like_ids.length * 8.8}</div>
+                                            <div className="PVP-number">{parseFloat((photo.like_ids.length * 8.8).toFixed(1))}</div>
                                         </div>
                                         <div className="Views">
                                             <div className="PVP-word">Views</div>
-                                            <div className="PVP-number">99.9</div>
+                                            <div className="PVP-number">{views}</div>
                                         </div>
                                         <div className="Popular">
                                             <div className="PVP-word">Popular</div>                    

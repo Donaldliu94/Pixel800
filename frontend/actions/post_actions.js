@@ -6,12 +6,11 @@ export const RECEIVE_ALL_POSTS = "RECEIVE_ALL_POSTS";
 export const RECEIVE_POST = "RECEIVE_POST";
 export const REMOVE_POST = "REMOVE_POST";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
-
+export const PATCH_POST = "PATCH_POST";
 
 
 
 const receiveAllPosts = (payload) => {
-    // debugger
     return({
         type: RECEIVE_ALL_POSTS,
         posts: payload.posts,
@@ -23,7 +22,6 @@ const receiveAllPosts = (payload) => {
 
 
 const receivePost = (post) => {
-    // debugger
     return({
         type: RECEIVE_POST,
         post: post
@@ -47,10 +45,17 @@ export const clearPostErrors = () => {
 };
 
 
+export const patchPost = (post) => {
+    return({
+        type: PATCH_POST,
+        post: post
+    })
+}
 
 
 
 
+//thunk action creators
 
 export const fetchPosts = () => (dispatch) => {
     return(
@@ -69,7 +74,6 @@ export const fetchPost = (id) => (dispatch) => {
 
 
 export const createPost = (post) => (dispatch) => {
-    // debugger
     return(
         APIUtil.createPost(post).then( (post) => dispatch(receivePost(post)))
     );
@@ -82,3 +86,10 @@ export const deletePost = (id) => (dispatch) => {
         APIUtil.deletePost(id).then( () => dispatch(removePost(id)))        // i had postId in the response which wasn't an iD, it was the return of render show which was an object, and we needed a number
     );
 };
+
+
+export const updatePost = (id, view) => (dispatch) => {
+    return(
+     APIUtil.patchPost(id, view).then( (post) => dispatch(patchPost(post)))   
+    )
+}

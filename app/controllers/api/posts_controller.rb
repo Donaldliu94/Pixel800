@@ -17,22 +17,26 @@ class Api::PostsController < ApplicationController
 
 
     def create
-        # debugger
         @post = Post.new(post_params)
-
         if @post.save
             render :show
         else
-            # debugger
             render json: @post.errors.full_messages, status: 401
         end
     end
 
 
+    def update
+        @post = Post.find(params[:id])
+        if @post
+            @post.update(view: params[:view])
+            render :show
+        end
+    end
+
 
     def destroy
         @post = current_picture
-        # debugger
         if @post
             @post.destroy
             render :show
@@ -46,7 +50,7 @@ class Api::PostsController < ApplicationController
 
 private
     def post_params
-        params.require(:post).permit(:title, :description, :photographer_id, :photo)
+        params.require(:post).permit(:title, :description, :photographer_id, :photo, :view)
     end
 
     def current_picture

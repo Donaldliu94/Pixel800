@@ -14,6 +14,7 @@ class Greeting extends React.Component {
             title: "",
             description: "",
             photoFile: null,
+            // view: 0,
             // uploadForm: false
         };
         // this.handleInput = this.handleInput.bind(this)
