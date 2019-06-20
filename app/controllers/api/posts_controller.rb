@@ -2,7 +2,8 @@ class Api::PostsController < ApplicationController
 #Pictures
 
     def index
-        @posts = Post.with_attached_photo.all.includes(:user).includes(:likes)
+        # @posts = Post.with_attached_photo.all.includes(:user).includes(:likes)
+        @posts = Post.with_attached_photo.all.includes(:user).includes(:likes, user: [:likes, :followers, :followed])
         # @users = User.all
         # @likes = Like.all
 

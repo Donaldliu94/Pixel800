@@ -62,7 +62,7 @@ class Search extends React.Component {
 
 
             if (matches.length === 0) {
-                matches.push( {title: "Unable to find photo"});
+                matches.push( {title: "Unable to find photo", id: -1});
             }
 
             return matches;
@@ -71,17 +71,22 @@ class Search extends React.Component {
 
     selectName(event){
         // const name = event.currentTarget.innerText;
-        const resultId = parseInt(event.target.value)
+        // if (event.target.innerHTML === "Unable to find photo"){ return null;}
+        const resultId = parseInt(event.target.value);
         this.setState( {searchInput: "" });
-        this.props.history.push(`/pictures/${resultId}`)
+        this.props.history.push(`/pictures/${resultId}`);
+
     }
     
 
     render() {
         const results = this.matches().map( (result, i) => {
             return (
-                <li key={i} value={result.id} onClick={this.selectName}>{result.title}</li>
+                <li key={i} 
+                value={result.id} 
+                    onClick={result.title === "Unable to find photo" ? null : this.selectName}>{result.title}</li>
             )
+
         })
 
         return(

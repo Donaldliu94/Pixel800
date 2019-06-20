@@ -93,6 +93,7 @@
     padding: 0px;
     margin: 0px;
     background-color: white;
+    cursor: pointer;
 }
 
 .auto ul li{
@@ -102,6 +103,12 @@
 
 .auto ul li:hover{
     background-color: #E8EAED;
+}
+
+.auto ul li[value="-1"]{
+    background-color: darkgray; 
+    color: white;
+    cursor: default;
 }
 
 .search{
