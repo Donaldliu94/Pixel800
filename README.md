@@ -74,7 +74,6 @@ Pixel800 is a photography platform for professional and novice photographers tha
         if (this.props.photos){ 
             this.props.photos.forEach( (photo) => {
                 if (photo.title.includes(this.state.searchInput) ){
-                    // this.setState({id: photo.id })
                     matches.push({title: photo.title, id: photo.id } )
                 }
             });
