@@ -98,8 +98,6 @@ Frontend Redux states are set up with distinguished reducers and actions for pho
 
 
 ## Possible Future Features
-- Likes for Photos
-- Follows for Users
-- User profiles
+- Customizable User profiles
 - Comments on photo/ Add photo to personal gallery
 - Sorting photos by various filters 
