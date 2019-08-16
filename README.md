@@ -1,7 +1,7 @@
 # PIXEL800
 [Live Site](https://pixel800.herokuapp.com/#/)
 
-Pixel800 is a photography platform for professional and novice photographers that was inspired by 500px. It utilizes Rails/PostgreSQL on the backend, along with React.js and Redux on the frontend.
+Pixel800 is a photography platform for professional and novice photographers that were inspired by 500px. It utilizes Rails/PostgreSQL on the backend, along with React.js and Redux on the frontend.
 
 
 ## Features
