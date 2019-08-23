@@ -13,7 +13,7 @@ class PostIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchPosts();
+        // this.props.fetchPosts();    //this is not needed, because the search bar is loaded first, and grabs all posts
     }
 
     componentWillUnmount(){

@@ -38,7 +38,7 @@ class Search extends React.Component {
 
 
     componentDidMount(){
-        // this.props.fetchPosts();
+        this.props.fetchPosts();
     }
 
 
