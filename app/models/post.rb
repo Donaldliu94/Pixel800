@@ -16,6 +16,11 @@ class Post < ApplicationRecord
     has_many :likers,
     through: :likes,
     source: :user
+
+
+    has_many :comments,
+    class_name: :Comment,
+    foreign_key: :post_id
     
 
 

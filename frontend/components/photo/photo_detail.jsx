@@ -314,14 +314,14 @@ class PhotoDetail extends React.Component {
 
                                 </div>
 
-{/* 
+
                                 <div className="post-detail-bottom-right">
                                     <div className="photo-detail-comment-number">0 Comments</div>
                                     <div className="photo-detail-adding-comment">
                                         <div className="photo-detail-add-comment-user-icon"><FontAwesomeIcon icon={['fas', 'user-circle']} /></div>
                                         <div className="outer-add-comment-box"><input placeholder="Add a comment" className="inner-add-comment-box"></input></div>
                                     </div>
-                                </div> */}
+                                </div> 
                             </div>
 
 
