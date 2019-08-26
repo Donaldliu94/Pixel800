@@ -1,15 +1,46 @@
 
 
 
-
-export const createComment = (id) => {
+export const fetchComments = () => {
     return(
         $.ajax({
-            method: "POST",
-            url: "api/comments",
-            data: {comment_id: id}
+            method: "GET",
+            url: "api/comments"
         })
     );
 };
 
+
+
+export const createComment = (comment) => {
+    return(
+        $.ajax({
+            method: "POST",
+            url: `api/posts/${comment.post_id}/comments`,
+            data: comment
+        })
+    );
+};
+
+
+export const deleteComment = (id) => {
+    return(
+        $.ajax({
+            method: "DELETE",
+            url: `api/comments/${id}`
+        })
+    );
+};
+
+
+
+export const patchComment = (comment) => {
+    return(
+        $.ajax({
+            method: "PATCH",
+            url: `api/comments/${comment.id}`,
+            data: comment,
+        })
+    );
+};
 

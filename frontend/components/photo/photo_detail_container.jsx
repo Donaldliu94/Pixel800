@@ -6,7 +6,7 @@ import { openModal, closeModal } from '../../actions/modal_action';
 import { fetchUsers } from '../../actions/user_action';
 import { createLike, deleteLike } from '../../actions/like_action';
 import { createFollow, deleteFollow } from '../../actions/follow_action';
-
+import { createComment, deleteComment } from '../../actions/comment_action';
 
 
 
@@ -41,6 +41,8 @@ const mapDispatchToProps = (dispatch) => {
         createFollow: (user_id) => dispatch(createFollow(user_id)),
         deleteFollow: (user_id) => dispatch(deleteFollow(user_id)),
 
+        createComment: (comment_id) => dispatch(createComment(comment_id)),
+        deleteComment: (user_id) => dispatch(deleteComment(user_id)),
 
         updatePost: (post) => dispatch(updatePost(post)),
     };
