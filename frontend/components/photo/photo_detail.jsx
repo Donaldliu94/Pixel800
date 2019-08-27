@@ -11,12 +11,15 @@ class PhotoDetail extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            title: "",
-            description: "",
-            photoFile: null,
+            // title: "",
+            // description: "",
+            // photoFile: null,
             // view: 0,
+            body: "",
         };
         // this.fromHome = true
+        this.handleInput = this.handleInput.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
     componentDidMount() {                                            //what was the point of this? is it needed?
         // this.props.fetchUsers().then( () => this.props.fetchPost(this.props.match.params.postId) )
@@ -52,6 +55,24 @@ class PhotoDetail extends React.Component {
     }
 
 
+    handleInput(field) {
+        return (e) => {
+            this.setState({ [field]: e.currentTarget.value })
+        }
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        let formData = new FormData();
+        formData.append('comment[body]', this.state.body);
+
+        
+        debugger
+        this.props.createComment(formData);
+        this.setState({
+            body: "",
+        });
+    }
 
     render(){
         if (this.props.photo === undefined) return null;            //this is to fix the problem when you refresh from show page to show page
@@ -319,7 +340,14 @@ class PhotoDetail extends React.Component {
                                     <div className="photo-detail-comment-number">0 Comments</div>
                                     <div className="photo-detail-adding-comment">
                                         <div className="photo-detail-add-comment-user-icon"><FontAwesomeIcon icon={['fas', 'user-circle']} /></div>
-                                        <div className="outer-add-comment-box"><input placeholder="Add a comment" className="inner-add-comment-box"></input></div>
+
+                                        <div className="outer-add-comment-box">
+                                            <form onSubmit={ () => this.handleSubmit()}>
+                                                <button onClick={this.handleSubmit}>Submit</button>
+                                                <input type="text" placeholder="Add a comment" className="inner-add-comment-box" value={this.state.body} onChange={this.handleInput("body")}></input>
+                                            </form>
+                                            
+                                        </div>
                                     </div>
                                 </div> 
                             </div>

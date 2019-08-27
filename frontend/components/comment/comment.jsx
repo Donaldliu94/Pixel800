@@ -18,14 +18,14 @@ class Comment extends React.Component {
 
     componentDidMount() {
 
-        
-
 
     }
 
 
 
-
+    render(){
+        
+    }
 
 
 

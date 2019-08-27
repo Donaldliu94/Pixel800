@@ -49,6 +49,8 @@ class PostForm extends React.Component {
         formData.append('post[photographer_id]', this.props.currentUser.id);
         formData.append('post[photo]', this.state.photoFile);
         formData.append('post[view]', this.state.view);
+        debugger
+        
         this.props.createPost(formData);
         this.props.closeModal();
         this.setState({

@@ -3,6 +3,7 @@ class Api::CommentsController < ApplicationController
 
     def create
         @comment = Comment.new(comment_params)
+        debugger
         @comment.user_id = current_user.id
         @comment.post_id = params[post_id]
         if @comment.save
