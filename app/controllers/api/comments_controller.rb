@@ -3,10 +3,8 @@ class Api::CommentsController < ApplicationController
 
     def create
         @comment = Comment.new(comment_params)
-        debugger
         @comment.user_id = current_user.id
         @comment.post_id = params[:post_id]
-        debugger
         # @comment.post_id = comment_params[post_id]
         if @comment.save
             @post = Post.find(@comment.post_id)

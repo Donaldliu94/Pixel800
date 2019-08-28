@@ -12,6 +12,7 @@ export default (state = {}, action) => {
         case RECEIVE_ALL_POSTS:
             return action.posts;
         case RECEIVE_POST:
+            debugger
             return merge({}, state, {[action.post.id]: action.post});
         case REMOVE_POST:
             delete newState[action.postId];
@@ -20,6 +21,7 @@ export default (state = {}, action) => {
 
         case RECEIVE_LIKE:
             // newState[action.like.post_id].liker_ids.push({id: action.like.id, user: action.like.user_id})       //this accesses the specific post and then access the array in that post
+            // debugger
             newState[action.post.id] = action.post
             return newState
         case REMOVE_LIKE:
@@ -30,8 +32,8 @@ export default (state = {}, action) => {
 
         case RECEIVE_COMMENT:
             debugger
-            newState[action]
-
+            // newState[action.post.id] = action.post
+            // return merge({}, state, {})
         default:
             return state;
     }
