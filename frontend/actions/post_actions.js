@@ -11,7 +11,7 @@ export const PATCH_POST = "PATCH_POST";
 
 
 const receiveAllPosts = (payload) => {
-    debugger
+    // debugger
     return({
         type: RECEIVE_ALL_POSTS,
         posts: payload.posts,
