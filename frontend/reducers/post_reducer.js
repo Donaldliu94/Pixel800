@@ -12,7 +12,6 @@ export default (state = {}, action) => {
         case RECEIVE_ALL_POSTS:
             return action.posts;
         case RECEIVE_POST:
-            debugger
             return merge({}, state, {[action.post.id]: action.post});
         case REMOVE_POST:
             delete newState[action.postId];
@@ -31,9 +30,9 @@ export default (state = {}, action) => {
             return newState;
 
         case RECEIVE_COMMENT:
-            debugger
-            // newState[action.post.id] = action.post
-            // return merge({}, state, {})
+            // debugger
+            newState[action.post.id] = action.post;
+            return newState;
         default:
             return state;
     }

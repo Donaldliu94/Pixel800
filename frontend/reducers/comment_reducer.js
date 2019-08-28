@@ -13,6 +13,7 @@ export default (state = {}, action) => {
         case RECEIVE_ALL_COMMENTS:
             return action.comments
         case RECEIVE_COMMENT:
+            debugger
             return merge( {}, state, {[action.comment.id]: action.comment});
         case REMOVE_COMMENT:
             delete newState[action.comment.id];
