@@ -41,7 +41,7 @@ const removePost = (id) => {
 
 export const clearPostErrors = () => {
     return({
-        type: CLEAR_ERRPRS
+        type: CLEAR_ERRORS
     });
 };
 
