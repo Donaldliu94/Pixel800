@@ -13,6 +13,7 @@ export const fetchComments = () => {
 
 
 export const createComment = (comment) => {
+    comment.post_id = comment.get('comment[post_id]')
     return(
         $.ajax({
             method: "POST",

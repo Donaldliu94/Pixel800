@@ -1,5 +1,6 @@
 class Comment < ApplicationRecord
-    validates :user_id, uniqueness: {score: :post_id}
+    # validates :user_id, uniqueness: {scope: :post_id}
+    validates :body, presence: true
 
 
     belongs_to :user,

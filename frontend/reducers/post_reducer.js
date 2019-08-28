@@ -1,12 +1,11 @@
 import merge from 'lodash/merge';
 import { RECEIVE_ALL_POSTS, RECEIVE_POST, REMOVE_POST } from '../actions/post_actions'
-import { RECEIEVE_ALL_USERS } from '../actions/user_action'
+import { RECEIVE_ALL_USERS } from '../actions/user_action'
 import { RECEIVE_LIKE, RECEIVE_ALL_LIKES, REMOVE_LIKE } from '../actions/like_action'
-
+import { RECEIVE_COMMENT } from '../actions/comment_action'
 
 export default (state = {}, action) => {
     Object.freeze(state);
-    
     const newState = merge({}, state);
 
     switch(action.type){
@@ -28,6 +27,11 @@ export default (state = {}, action) => {
             delete newState[action.post.id]
             newState[action.post.id] = action.post
             return newState;
+
+        case RECEIVE_COMMENT:
+            debugger
+            newState[action]
+
         default:
             return state;
     }

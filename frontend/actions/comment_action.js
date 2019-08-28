@@ -16,10 +16,10 @@ const receiveAllComments = (comments) => {
 
 
 const receiveComment = (payload) => {
+    debugger
     return({
         type: RECEIVE_COMMENT,
         comment: payload.comment,
-        like: payload.like,
         post: payload.post,
         user: payload.user
     });
