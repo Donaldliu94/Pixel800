@@ -13,7 +13,6 @@ import { createComment, deleteComment } from '../../actions/comment_action';
 const mapStateToProps = (state, ownProps) => {
     const photo_object = state.entities.posts[ownProps.match.params.postId]
     //  || {};
-
     return{
         photo: photo_object,
         // prevPhoto: state.entities.posts[ownProps.match.params.postId],
@@ -21,6 +20,8 @@ const mapStateToProps = (state, ownProps) => {
         currentUser: state.entities.users[state.session.id],
         modalState: state.ui.modal,
         users: state.entities.users,
+        comments: state.entities.comments,
+
     };
 };
 

@@ -80,6 +80,8 @@ class PhotoDetail extends React.Component {
         let views = this.props.photo.view;
         let title = photo.title;
         let photoUrl = photo.photoUrl;
+        let comments = this.props.comments;
+
         // let x = console.log(window.location.href);
         let createdAt = photo.created_at;
         let currentUser = this.props.currentUser;
@@ -133,6 +135,23 @@ class PhotoDetail extends React.Component {
                     :
                     <div>by {photo.postUsername} • <span onClick={() => this.props.createFollow(photo.photographer_id)} className="follow">Follow</span> </div>
         }
+
+
+        let photoComments = [];
+
+        // for(let i = 0; i < Object.keys(comments).length; i++){
+        //     if (comments.post_id === photo.id){
+        //         photoComments.concat(comment)
+        //     }
+        // }
+
+        for(var keys in comments){
+            if (comments[keys].post_id === photo.id){
+                photoComments.push(comments[keys])
+            }
+        }
+
+        // debugger
 
 
 
@@ -337,7 +356,7 @@ class PhotoDetail extends React.Component {
 
 
                                 <div className="post-detail-bottom-right">
-                                    <div className="photo-detail-comment-number">0 Comments</div>
+                                    <div className="photo-detail-comment-number">{photoComments.length} Comments</div>
                                     <div className="photo-detail-adding-comment">
                                         <div className="photo-detail-add-comment-user-icon"><FontAwesomeIcon icon={['fas', 'user-circle']} /></div>
 
@@ -350,6 +369,9 @@ class PhotoDetail extends React.Component {
                                         </div>
                                     </div>
                                 </div> 
+                                <div>
+
+                                </div>
                             </div>
 
 

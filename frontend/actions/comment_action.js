@@ -16,7 +16,6 @@ const receiveAllComments = (comments) => {
 
 
 const receiveComment = (payload) => {
-    debugger
     return({
         type: RECEIVE_COMMENT,
         comment: payload.comment,
