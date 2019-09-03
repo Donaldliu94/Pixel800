@@ -147,11 +147,11 @@ class PhotoDetail extends React.Component {
 
         for(var keys in comments){
             if (comments[keys].post_id === photo.id){
-                photoComments.push(comments[keys])
+                photoComments.push(comments[keys].body)
             }
         }
 
-        // debugger
+        debugger
 
 
 
@@ -362,12 +362,18 @@ class PhotoDetail extends React.Component {
 
                                         <div className="outer-add-comment-box">
                                             <form onSubmit={ () => this.handleSubmit()}>
-                                                <button onClick={this.handleSubmit}>Submit</button>
                                                 <input type="text" placeholder="Add a comment" className="inner-add-comment-box" value={this.state.body} onChange={this.handleInput("body")}></input>
+                                            <button onClick={this.handleSubmit}>Submit</button>
                                             </form>
-                                            
                                         </div>
                                     </div>
+
+                                    <div>
+                                        <ul>
+                                            {photoComments}
+                                        </ul>
+                                    </div>
+
                                 </div> 
                                 <div>
 
