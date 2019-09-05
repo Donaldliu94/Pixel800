@@ -41,7 +41,7 @@ class HomeFeed extends React.Component {
             i++;
             idx++;
         }
-
+ 
 
         // const left = [];
         // const mid = [];
