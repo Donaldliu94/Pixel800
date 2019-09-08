@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import PostFormContainer from '../post/post_form_container';
 import Logo from '../../logo/navbar_logo';
 import Search from '../search/search'
-
+import CommentItem from '../comment/comment_item';
 
 class PhotoDetail extends React.Component {
 
@@ -145,13 +145,18 @@ class PhotoDetail extends React.Component {
         //     }
         // }
 
-        for(var keys in comments){
-            if (comments[keys].post_id === photo.id){
-                photoComments.push(comments[keys].body)
-            }
-        }
+        // for(var keys in comments){
+        //     if (comments[keys].post_id === photo.id){
+        //         photoComments.push(comments[keys].body)
+        //     }
+        // }
 
         debugger
+        for (var keys in comments) {
+            if (comments[keys].post_id === photo.id) {
+                photoComments.push(<CommentItem keys/>)
+            }
+        }
 
 
 
