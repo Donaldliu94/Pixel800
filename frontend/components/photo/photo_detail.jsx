@@ -83,7 +83,7 @@ class PhotoDetail extends React.Component {
         let comments = this.props.comments;
 
         // let x = console.log(window.location.href);
-        let createdAt = photo.created_at;
+        let photoCreatedAt = photo.created_at;
         let currentUser = this.props.currentUser;
         let users = this.props.users;
         let deletePhoto = 
@@ -145,20 +145,16 @@ class PhotoDetail extends React.Component {
         //     }
         // }
 
-        // for(var keys in comments){
-        //     if (comments[keys].post_id === photo.id){
-        //         photoComments.push(comments[keys].body)
-        //     }
-        // }
-
 
         for (var keys in comments) {
             let comment = comments[keys];
-
+            
             if (comment.post_id === photo.id) {
                 photoComments.push(<CommentItem key={keys} comment={comment} />)   //can i use key={keys} here because, keys will always be unique?
             }
         }
+
+        // debugger
 
 
         // if (this.props.match.path )
@@ -327,7 +323,7 @@ class PhotoDetail extends React.Component {
                                     </div>
 
                                     <div className="PostIndexItem-photo-date">
-                                        <FontAwesomeIcon icon={['far', 'calendar-alt']}/> &nbsp; {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"][createdAt.slice(5, 7) - 1] + " " + createdAt.slice(8, 10) + ", " + createdAt.slice(0, 4)}
+                                        <FontAwesomeIcon icon={['far', 'calendar-alt']}/> &nbsp; {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"][photoCreatedAt.slice(5, 7) - 1] + " " + photoCreatedAt.slice(8, 10) + ", " + photoCreatedAt.slice(0, 4)}
                                     </div>
 
 
@@ -369,8 +365,8 @@ class PhotoDetail extends React.Component {
                                         <div className="outer-add-comment-box">
                                             <form onSubmit={ () => this.handleSubmit()}>
                                                 <input type="text" placeholder="Add a comment" className="inner-add-comment-box" value={this.state.body} onChange={this.handleInput("body")}></input>
+                                                <button onClick={this.handleSubmit}>Submit</button>
                                             </form>
-                                            <button onClick={this.handleSubmit}>Submit</button>
                                         </div>
                                     </div>
 

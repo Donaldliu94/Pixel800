@@ -7,11 +7,13 @@
 
 .comment-box{
     margin: 20px 0px 10px;
-    justify-content: column;
-
-    border: 1px solid;
+    /* border: 1px solid; */
     padding: 10px;
-  box-shadow: 5px 5px 5px 1px #888888;
+    box-shadow: 5px 5px 5px 1px #888888;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 
@@ -22,6 +24,14 @@
 
 
 .comment-username{
-    font-size: 12px;
+    font-size: 18px;
     font-weight: bold;
+}
+
+
+
+.comment-entry{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

@@ -63,7 +63,7 @@ json.comments do
     @posts.each do |post|
         post.comments.each do |comment|
             json.set! comment.id do
-                json.extract! comment, :id, :user_id, :post_id, :body
+                json.extract! comment, :id, :user_id, :post_id, :body, :created_at
                 json.commentUsername comment.user.username          #why do i need both here and in show, is it because of how it renders when i post a comment and i want to see it update immediately?
             end
         end
