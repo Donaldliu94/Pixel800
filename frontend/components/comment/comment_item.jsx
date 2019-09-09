@@ -2,19 +2,20 @@ import React from 'react';
 
 
 
-const CommentItem = ({ }) => {
+const CommentItem = ({comment}) => {
 
+    debugger
+   
 
     return(
         <div>
-            
+        {comment.body}    {comment.commentUsername}
         </div>
 
     );
 
 
 }
-
 
 
 

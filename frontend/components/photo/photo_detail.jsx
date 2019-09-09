@@ -151,13 +151,14 @@ class PhotoDetail extends React.Component {
         //     }
         // }
 
-        debugger
+
         for (var keys in comments) {
-            if (comments[keys].post_id === photo.id) {
-                photoComments.push(<CommentItem keys/>)
+            let comment = comments[keys];
+
+            if (comment.post_id === photo.id) {
+                photoComments.push(<CommentItem key={keys} comment={comment} />)   //can i use key={keys} here because, keys will always be unique?
             }
         }
-
 
 
         // if (this.props.match.path )
