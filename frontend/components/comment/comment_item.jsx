@@ -4,14 +4,20 @@ import React from 'react';
 
 const CommentItem = ({comment}) => {
 
-    debugger
    
 
     return(
-        <div>
-        {comment.body}    {comment.commentUsername}
-        </div>
+        <div className="comment-box">
 
+            <div className="comment-body">
+                {comment.body} 
+            </div>
+
+            <div className="comment-username">
+                By: {comment.commentUsername}
+            </div>
+
+        </div>
     );
 
 

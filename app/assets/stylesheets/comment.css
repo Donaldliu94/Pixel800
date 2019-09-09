@@ -1,0 +1,27 @@
+
+
+
+
+/* var randomColor = Math.floor(Math.random()*16777215).toString(16); */
+
+
+.comment-box{
+    margin: 20px 0px 10px;
+    justify-content: column;
+
+    border: 1px solid;
+    padding: 10px;
+  box-shadow: 5px 5px 5px 1px #888888;
+}
+
+
+.comment-body{
+    font-size: 18px;
+    padding-right: 32px;
+}
+
+
+.comment-username{
+    font-size: 12px;
+    font-weight: bold;
+}
