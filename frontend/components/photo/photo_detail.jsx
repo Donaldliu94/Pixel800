@@ -154,7 +154,6 @@ class PhotoDetail extends React.Component {
             }
         }
 
-        // debugger
 
 
         // if (this.props.match.path )
@@ -330,7 +329,7 @@ class PhotoDetail extends React.Component {
                                     <div className="Pulse-Views-Popular">
                                         <div className="Pulse">
                                             <div className="PVP-word">Pulse</div>
-                                            <div className="PVP-number">{parseFloat((photo.like_ids.length * 8.8 + (views * 0.8) + 4.4).toFixed(1))}</div>
+                                            <div className="PVP-number">{parseFloat((photo.like_ids.length * 8.8 + (views * 0.8) + photo.comment_ids.length + 4.4).toFixed(1))}</div>
                                         </div>
                                         <div className="Views">
                                             <div className="PVP-word">Views</div>
