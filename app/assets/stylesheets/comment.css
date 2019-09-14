@@ -17,6 +17,7 @@
 .comment-body{
     font-size: 18px;
     padding-right: 32px;
+    word-break: break-word;
 }
 
 
