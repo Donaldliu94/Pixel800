@@ -1,3 +1,8 @@
+
+
+
+
+
 json.comment do
     json.extract! @comment, :id, :user_id, :post_id, :body, :created_at
     json.commentUsername @comment.user.username

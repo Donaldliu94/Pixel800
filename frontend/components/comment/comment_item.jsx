@@ -1,16 +1,15 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 
-const CommentItem = ({comment}) => {
-
-   
+const CommentItem = ({comment, deleteComment}) => {
 
     return(
         <>
 
             <div className="comment-box">
-                <div className="comment-first-box">
+                <div className="comment-top-box">
                     <div className="comment-username">
                         {comment.commentUsername}
                     </div>
@@ -21,8 +20,14 @@ const CommentItem = ({comment}) => {
                 </div>
 
 
-                <div className="comment-body">
-                    {comment.body} 
+                <div className="comment-bottom-box">
+                    <div className="comment-body">
+                        {comment.body} 
+                    </div>
+
+                    <div className="icon-comment-delete">
+                        <span onClick={ () => deleteComment(comment.id)}><FontAwesomeIcon icon={['far', 'trash-alt']} /></span>
+                    </div>
                 </div>
             </div>
 

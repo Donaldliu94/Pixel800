@@ -150,7 +150,7 @@ class PhotoDetail extends React.Component {
             let comment = comments[keys];
             
             if (comment.post_id === photo.id) {
-                photoComments.push(<CommentItem key={keys} comment={comment} />)   //can i use key={keys} here because, keys will always be unique?
+                photoComments.push(<CommentItem key={keys} comment={comment} deleteComment={this.props.deleteComment}/>)   //can i use key={keys} here because, keys will always be unique?
             }
         }
 

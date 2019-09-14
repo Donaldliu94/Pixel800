@@ -26,9 +26,25 @@
 }
 
 
-.comment-first-box{
+.comment-top-box{
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-bottom: 2%;
+}
+
+.comment-bottom-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+.icon-comment-delete{
+    cursor: pointer;
+}
+
+.icon-comment-delete:hover{
+    color: #0970D0;
 }

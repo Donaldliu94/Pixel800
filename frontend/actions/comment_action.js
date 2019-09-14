@@ -28,7 +28,7 @@ const removeComment = (payload) => {
     return({
         type: REMOVE_COMMENT,
         comment: payload.comment,
-        like: payload.like,
+        // like: payload.like,
         post: payload.post,
         user: payload.user
     });

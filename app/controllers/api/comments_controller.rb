@@ -21,6 +21,8 @@ class Api::CommentsController < ApplicationController
         @comment = Comment.find(params[:id])
         if @comment
             @comment.destroy
+            @post = Post.find(@comment.post_id)
+            @user = User.find(@comment.user_id)
             render :show
         else
             render ["Could not find comment"]

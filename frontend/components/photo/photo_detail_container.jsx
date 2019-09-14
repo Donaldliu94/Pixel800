@@ -43,7 +43,7 @@ const mapDispatchToProps = (dispatch) => {
         deleteFollow: (user_id) => dispatch(deleteFollow(user_id)),
 
         createComment: (comment) => dispatch(createComment(comment)),
-        deleteComment: (user_id) => dispatch(deleteComment(user_id)),
+        deleteComment: (comment_id) => dispatch(deleteComment(comment_id)),
 
         updatePost: (post) => dispatch(updatePost(post)),
     };
