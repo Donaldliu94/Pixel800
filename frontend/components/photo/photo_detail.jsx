@@ -155,6 +155,9 @@ class PhotoDetail extends React.Component {
         }
 
 
+        let pagination = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].slice(0, Math.ceil(photoComments.length / 10));
+
+
 
         // if (this.props.match.path )
         // if (photo !== undefined) {
@@ -355,27 +358,30 @@ class PhotoDetail extends React.Component {
 
                                 </div>
 
+                                    <div className="post-detail-bottom-right">
+                                        <div className="photo-detail-comment-number">{photoComments.length} Comments</div>
+                                        <div className="photo-detail-adding-comment">
+                                            <div className="photo-detail-add-comment-user-icon"><FontAwesomeIcon icon={['fas', 'user-circle']} /></div>
 
-                                <div className="post-detail-bottom-right">
-                                    <div className="photo-detail-comment-number">{photoComments.length} Comments</div>
-                                    <div className="photo-detail-adding-comment">
-                                        <div className="photo-detail-add-comment-user-icon"><FontAwesomeIcon icon={['fas', 'user-circle']} /></div>
-
-                                        <div className="outer-add-comment-box">
-                                            <form onSubmit={ () => this.handleSubmit()}>
-                                                <input type="text" placeholder="Add a comment" className="inner-add-comment-box" value={this.state.body} onChange={this.handleInput("body")}></input>
-                                                <button onClick={this.handleSubmit}>Submit</button>
-                                            </form>
+                                            <div className="outer-add-comment-box">
+                                                <form onSubmit={ () => this.handleSubmit()}>
+                                                    <input type="text" placeholder="Add a comment" className="inner-add-comment-box" value={this.state.body} onChange={this.handleInput("body")}></input>
+                                                    <button onClick={this.handleSubmit}>Submit</button>
+                                                </form>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div>
-                                        <ul>
-                                            {photoComments}
-                                        </ul>
-                                    </div>
+                                        <div>
+                                            <ul>
+                                                {photoComments}
+                                            </ul>  
+                                        </div>
 
-                                </div> 
+                                        <div>
+                                            {/* {pagination} */}
+                                        </div>
+                                    </div> 
+
                                 <div>
 
                                 </div>
