@@ -366,7 +366,7 @@ class PhotoDetail extends React.Component {
                                             <div className="outer-add-comment-box">
                                                 <form onSubmit={ () => this.handleSubmit()}>
                                                     <input type="text" placeholder="Add a comment" className="inner-add-comment-box" value={this.state.body} onChange={this.handleInput("body")}></input>
-                                                    <button onClick={this.handleSubmit}>Submit</button>
+                                                <button onClick={this.handleSubmit} className="comment-submit-btn">Submit</button>
                                                 </form>
                                             </div>
                                         </div>

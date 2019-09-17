@@ -49,3 +49,9 @@
 .icon-comment-delete:hover{
     color: #0970D0;
 }
+
+
+
+.comment-submit-btn{   
+    display: none;
+}
