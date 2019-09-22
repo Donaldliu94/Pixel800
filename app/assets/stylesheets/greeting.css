@@ -42,6 +42,7 @@
 
 .user-ellipsis:hover{
     color: #0088ff;
+    cursor: pointer;
 }
 
 
