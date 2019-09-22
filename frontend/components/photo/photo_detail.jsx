@@ -193,7 +193,7 @@ class PhotoDetail extends React.Component {
                         </div>
 
                         <div className="user-nav-bar-right">
-                            <form >
+                            <form className="test">
                                 <label className="search">
                                     {/* <FontAwesomeIcon icon={['fas', 'search']} />
                                     <input placeholder="Search for photos, location, or people" ></input> */}

@@ -120,25 +120,26 @@
     white-space: nowrap;
 } 
 
+.test{
+    background: #F7F8FA;
+}
+
 .search input{      
     margin: 0;
     margin-left: 4px;
-    padding:0;
+    padding: 4px;
     border: 0px;
     width:280px;
+    background: #F7F8FA;
 }
 
-.search:focus-within{
+.search:focus-within{           
     border-color:#0088ff;
 }
 
 .search input:focus{
     outline-width:0;
 }
-
-
-
-
 
 
 
