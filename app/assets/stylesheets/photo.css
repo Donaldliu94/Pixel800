@@ -142,6 +142,11 @@
     padding: 16px;
     border: 1px solid #6D7378;  
     font-size: 18px;
+    outline: none;
+}
+.inner-add-comment-box:focus{
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
 }
 
 .outer-add-comment-box{
