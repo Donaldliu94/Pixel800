@@ -69,8 +69,20 @@
     width: 300px;
 }
 
+.uploading-picture-title:focus{
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
 .uploading-picture-description{
     width: 300px;
+}
+
+.uploading-picture-description:focus{
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
 }
 
 

@@ -71,11 +71,18 @@
 }
 
 
+.PostIndexItem-photo-date{
+    /* padding-bottom: 20px; */
+}
+
+.photo-detail-description{
+    margin: 20px 0px 32px 0px;
+}
 
 .Pulse-Views-Popular{
     display: flex;
     justify-content: column;
-    margin: 32px 0px;
+    margin: 0px 0px 32px 0px;
 }
 
 .PVP-word{

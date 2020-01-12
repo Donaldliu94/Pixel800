@@ -328,6 +328,10 @@ class PhotoDetail extends React.Component {
                                         <FontAwesomeIcon icon={['far', 'calendar-alt']}/> &nbsp; {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"][photoCreatedAt.slice(5, 7) - 1] + " " + photoCreatedAt.slice(8, 10) + ", " + photoCreatedAt.slice(0, 4)}
                                     </div>
 
+                                    <div className="photo-detail-description">
+                                        {photo.description}
+                                    </div>
+
 
                                     <div className="Pulse-Views-Popular">
                                         <div className="Pulse">
