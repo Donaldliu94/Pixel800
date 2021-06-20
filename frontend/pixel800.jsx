@@ -22,16 +22,7 @@ document.addEventListener("DOMContentLoaded", () =>{
         store = configureStore();
     }
 
-
-    // TESTING!!!!!!!!
-
-    // window.login = login;
-    // window.logout = logout;
-    // window.signup = signup;
     window.store = store;
-
-
-    // TESTING!!!!!!!!
 
     ReactDOM.render(< Root store={store}/>, root);
 });

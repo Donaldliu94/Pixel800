@@ -20,7 +20,6 @@ export default (state = {}, action) => {
 
         case RECEIVE_LIKE:
             // newState[action.like.post_id].liker_ids.push({id: action.like.id, user: action.like.user_id})       //this accesses the specific post and then access the array in that post
-            // debugger
             newState[action.post.id] = action.post
             return newState
         case REMOVE_LIKE:
@@ -30,7 +29,6 @@ export default (state = {}, action) => {
             return newState;
 
         case RECEIVE_COMMENT:
-            // debugger
             newState[action.post.id] = action.post;
             return newState;
         default:

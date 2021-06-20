@@ -9,7 +9,6 @@ class PostIndex extends React.Component {
 
     constructor(props){
         super(props);
-        // debugger
     }
 
     componentDidMount() {
@@ -17,7 +16,6 @@ class PostIndex extends React.Component {
     }
 
     componentWillUnmount(){
-        // debugger
     }
     
 
@@ -26,16 +24,12 @@ class PostIndex extends React.Component {
         let leftArray = [];
         let rightArray = [];
         this.props.photos.forEach( (photo, idx) =>{
-            // debugger
             if (idx % 2 === 0){
-                // debugger
                 if (this.props.currentUser.id === photo.photographer_id ){ 
                     // debugger // this is an array iteration. maybe make it a hash map?
                     leftArray.unshift(<PostIndexItem photo={photo} key={idx} currentUser={this.props.currentUser} deletePost={this.props.deletePost} users={this.props.users} createLike={this.props.createLike} deleteLike={this.props.deleteLike} likes={this.props.likes}/>)
                 }
-                // debugger
             } else{
-                // debugger
 
                 if (this.props.currentUser.id === photo.photographer_id ){
                     rightArray.unshift(<PostIndexItem photo={photo} key={idx} currentUser={this.props.currentUser} deletePost={this.props.deletePost} users={this.props.users} createLike={this.props.createLike} deleteLike={this.props.deleteLike} likes={this.props.likes}/>)
@@ -112,7 +106,6 @@ class PostIndex extends React.Component {
         )
         // let photos = this.props.photos.map( (photo, idx) =>{
         //     // return <img className="photos" key={idx} src={photo.photoUrl}></img>
-        //     debugger
         //     return <PostIndexItem photo={photo} key={idx} />
         // })
 

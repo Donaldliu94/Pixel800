@@ -63,7 +63,6 @@ class PhotoDetail extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // debugger
         let formData = new FormData();
         formData.append('comment[body]', this.state.body);
         formData.append('comment[post_id]', this.props.match.params.postId);
